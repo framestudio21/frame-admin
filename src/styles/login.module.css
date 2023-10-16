@@ -1,0 +1,136 @@
+.mainbody {
+  width: 100vw;
+  height: 100vh;
+  background: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .formbody {
+    padding: 40px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .logo {
+      margin: 0 auto;
+      width: 250px;
+      height: 50px;
+    }
+
+    .topsection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+
+      .header {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 30px;
+        font-weight: 900;
+        color: var(--blue-color);
+      }
+
+      .text {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 10px;
+      }
+    }
+
+    .bottomsection {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+
+      .inputfield {
+        width: 90%;
+        padding: 15px 40px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        border: 1px solid var(--charcoal-color);
+        border-radius: 40px;
+        font-size: 14px;
+        cursor: text;
+      }
+      .inputfield::placeholder {
+        text-transform: uppercase;
+        font-size: 10px;
+      }
+      .inputfield:active {
+        border: 1px solid var(--green-color);
+      }
+
+      .submitbtn {
+        width: 60%;
+        padding: 15px 40px;
+        border-radius: 30px;
+        border: 1px solid var(--blue-color);
+        background: var(--blue-color);
+        color: var(--white-color);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      .submitbtn:hover {
+        background: var(--black-color);
+        border: 1px solid var(--black-color);
+        color: var(--white-color);
+      }
+      .submitbtn:active {
+        background: var(--green-color);
+        border: 1px solid var(--green-color);
+        color: var(--black-color);
+      }
+    }
+  }
+}
+
+/* .cardmainbody{
+    width: 100%;
+    height: 100%;
+    background: var(--white-color);
+    border-radius: 12px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+
+
+    .rightside{
+        width: 45%;
+        height: 100%;
+        object-fit: fill;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        .carouselbody{
+            width: 100%;
+            height: 100%;
+            border-radius: 0 12px 12px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            .carouselimage{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    
+    .leftside{
+        width: 65%;
+        height: 100%;
+        padding: 10px;
+    }
+} */

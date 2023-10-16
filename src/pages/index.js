@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
+import Login from "./login"
 import Home from "./home"
 
 
@@ -21,7 +22,8 @@ function Index() {
 
       <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="*" element={<Errorpage />} />
         <Route path="/404" element={<Errorpage />} />
       </Routes>
