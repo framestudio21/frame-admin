@@ -1,0 +1,97 @@
+.navbarmainbody {
+  width: 60px;
+  height: 100vh;
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+
+  .sidenavbar {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px 60px 10px;
+
+    .menubtn {
+      border: none;
+      outline: none;
+      background: none;
+      color: var(--white-color);
+      cursor: pointer;
+
+      .menubtnicon {
+        height: 30px;
+        width: 40px;
+      }
+    }
+
+    .logo {
+      width: 120px;
+      height: 40px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .navbody{
+    position: absolute;
+    left: 60px;
+    top: 0;
+    padding: 20px 20px 20px 10px;
+    background: var(--black-color);
+    height: 100vh;
+    width: 400px;
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+
+    .navlist{
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-weight: 700;
+        font-size: 20px;
+        border: 2px solid transparent;
+        padding: 15px 15px;
+    }
+    .navlist:hover{
+        border: 2px solid var(--white-color);
+    }
+    .navlist:active{
+        background: var(--blue-color);
+        color: var(--white-color);
+        border: 2px solid transparent;
+    }
+
+    .logoutbtn{
+        padding: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 18px;
+        cursor: pointer;
+        outline: none;
+        background: var(--white-color);
+        border: 2px solid transparent;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: center;
+    }
+    .logoutbtn:hover{
+        background: none;
+        border: 2px solid var(--white-color);
+        color: var(--white-color);
+    }
+    .logoutbtn:active{
+        border: 2px solid transparent;
+        color: var(--black-color);
+        background: var(--green-color);
+    }
+  }
+}

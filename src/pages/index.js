@@ -5,6 +5,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Login from "./login"
 import Home from "./home"
+import Blog from "./blog"
+import Contact from "./contact"
+import Data from "./data"
+import Order from "./order"
+import Upload from "./upload"
+
 
 
 import Errorpage from "./_error"
@@ -24,6 +30,15 @@ function Index() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/data" element={<Data />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/upload" element={<Upload />} />
+
+
+
+
         <Route path="*" element={<Errorpage />} />
         <Route path="/404" element={<Errorpage />} />
       </Routes>

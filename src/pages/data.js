@@ -2,15 +2,15 @@ import dynamic from "next/dynamic";
 
 import Navbar from "../component/navbar"
 
-import styles from "../styles/home.module.css"
+import styles from "../styles/data.module.css"
 
-export default dynamic(() => Promise.resolve(Home), { ssr: false });
-const Home = () => {
+export default dynamic(() => Promise.resolve(Data), { ssr: false });
+const Data = () => {
 return (
     <>
     <Navbar/>
     <main className="mainpagebody">
-        home page
+        data page
     </main>
     </>
 )}
