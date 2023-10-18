@@ -9,70 +9,79 @@ import { FaHeading, FaQuoteRight } from "react-icons/fa";
 
 import Navbar from "../../component/navbar";
 
-import styles from "./style/upload.module.css";
+import styles from "./styles/upload.module.css";
+
+const Input = (props) => {
+  return(
+    <div className={styles.textarea}>
+    <textarea
+     value={`formData.${props.placeholder}` || ""}
+     onChange={handleInputChange}
+      name={props.placeholder}
+      className={styles.textareainputfield}
+      placeholder={"enter your " + props.placeholder}
+    />
+  </div>
+  )
+}
 
 export default dynamic(() => Promise.resolve(Upload), { ssr: false });
 const Upload = () => {
-  // click to add new field
-  const [val, setVal] = useState([]);
-  let [cname, setCname] = useState();
-
-  const handleAdd = () => {
-    const abc = [...val, []];
-    setVal(abc);
-    setCname("text");
-  };
-  const handleImageAdd = () => {
-    const abc = [...val, []];
-    setVal(abc);
-    setCname("image");
-  };
-  const handleChange = (onChangevalue, i) => {
-    const inputdata = [...val];
-    inputdata[i] = onChangevalue.target.value;
-    setVal(inputdata);
-  };
-  const handleDelete = (i) => {
-    const deletVal = [...val];
-    deletVal.splice(i, 1);
-    setVal(deletVal);
-  };
 
   // function for from submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    setVal([]);
   };
 
+  // function for store formdata
+  const [formData, setFormData] = useState({});
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  }
 
-  // useEffect(() => {
-  //   const handleAdd = () => {
-  //     const abc = [...val, []];
-  //     setVal(abc);
-  //     setCname("text");
-  //   };
-  //   const handleImageAdd = () => {
-  //     const abc = [...val, []];
-  //     setVal(abc);
-  //     setCname("image");
-  //   };
-  //   const handleChange = (onChangevalue, i) => {
-  //     const inputdata = [...val];
-  //     inputdata[i] = onChangevalue.target.value;
-  //     setVal(inputdata);
-  //   };
-  //   const handleDelete = (i) => {
-  //     const deletVal = [...val];
-  //     deletVal.splice(i, 1);
-  //     setVal(deletVal);
-  //   };
-  // }, [])
+  console.log(formData)
+
+  const PostData = async (e) => {
+    e.preventDefault();
+  }
+
+// function for reset button of form
+    const reset = () => {
+      setFormData({})
+    }
+
+
+  // function fot new form adding
+const [ inputList, setInputList] = useState([])
+const [textno, setTextNo] = useState(0)
+const [imageno, setImageNo] = useState(0)
+const [headingno, setHeadingNo] = useState(0)
+const [quoteno, setQuoteNo] = useState(0)
+const onAddTextBtnClick = () => {
+  setTextNo(textno+1)
+  setInputList(inputList.concat(<Input key={inputList.length} placeholder={`text${textno}`} />));
+}
+const onAddImageBtnClick = () => {
+  setImageNo(imageno+1)
+  setInputList(inputList.concat(<Input key={inputList.length} placeholder={`image${imageno}`} />));
+}
+const onAddHeadingBtnClick = () => {
+  setHeadingNo(headingno+1)
+  setInputList(inputList.concat(<Input key={inputList.length} placeholder={`heading${headingno}`} />));
+}
+const onAddquoteBtnClick = () => {
+  setQuoteNo(quoteno+1)
+  setInputList(inputList.concat(<Input key={inputList.length} placeholder={`quote${quoteno}`} />));
+}
 
   return (
     <>
       <Navbar />
       <main className="mainpagebody">
         <div className={styles.uploadpagemainbody}>
+
+
           <div className={styles.uploadsection}>
             <div className={styles.headertext}>Project Upload Section</div>
 
@@ -234,66 +243,57 @@ const Upload = () => {
                 <div className={styles.descriptionarea} id="descriptionarea">
                   <textarea
                     className={styles.textareainputfield}
+                    name="description"
                     placeholder="enter project short description"
+                    value={formData.description || ""}
+                    onChange={handleInputChange}
                   />
                 </div>
 
-                {val.map((data, i) => {
-                  return (
-                    <>
-                      <div className={styles.textarea} key={i}>
-                        <textarea
-                          value={data}
-                          onChange={e=>handleChange(e,i)}
-                          name={`${cname}${i}`}
-                          className={styles.textareainputfield}
-                          placeholder={`enter your ${cname}${i}`}
-                        />
-                        <button
-                          onClick={() => handleDelete(i)}
-                          className={styles.divclosebtn}
-                        >
-                          <AiFillCloseCircle />
-                        </button>
-                      </div>
-                    </>
-                  );
-                })}
+                {inputList}
+
               </div>
               <div className={styles.btnsection}>
-                <button type="submit" className={styles.submitbtn}>
+                <button type="submit" className={styles.submitbtn} onClick={PostData}>
                   Submit
                 </button>
-                <button type="reset" className={styles.resetbtn}>
+                <button type="reset" className={styles.resetbtn} onClick={reset}>
                   reset
                 </button>
               </div>
             </form>
           </div>
+
           <div className={styles.navbarsection}>
             <button
-              onClick={() => handleAdd()}
+              onClick={() => onAddTextBtnClick()}
               className={styles.icons}
               title="text-box"
             >
               <AiFillFileText className={styles.icon} />
             </button>
             <button
-              onClick={() => handleImageAdd()}
+              onClick={() => onAddImageBtnClick()}
               className={styles.icons}
               title="image"
             >
               <AiFillFileImage className={styles.icon} />
             </button>
-            <button className={styles.icons} title="header-tag">
+            <button
+              onClick={() => onAddHeadingBtnClick()}
+             className={styles.icons} title="header-tag">
               <FaHeading className={styles.icon} />
             </button>
-            <button className={styles.icons} title="quote-box">
+            <button 
+              onClick={() => onAddquoteBtnClick()}
+            className={styles.icons} title="quote-box">
               <FaQuoteRight className={styles.icon} />
             </button>
           </div>
+
+
         </div>
       </main>
     </>
   );
-};
+}
