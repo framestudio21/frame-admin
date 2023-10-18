@@ -10,6 +10,7 @@ import Contact from "./contact"
 import Data from "./data"
 import Order from "./order"
 import Upload from "./upload"
+import Comment from "./comment"
 
 
 
@@ -35,6 +36,7 @@ function Index() {
         <Route path="/data" element={<Data />} />
         <Route path="/order" element={<Order />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/comment" element={<Comment />} />
 
 
 
