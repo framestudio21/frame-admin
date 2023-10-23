@@ -127,6 +127,13 @@
                         font-weight: 700;
                         font-size: 18px;
                     }
+
+                    .tagdiv{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 10px;
+                    }
                 }
     
                 .divleftside select{
