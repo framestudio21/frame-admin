@@ -1,4 +1,5 @@
 .homemainbody{
-    width: calc(100vw - 60px);
-    margin-left: 60px;
+    /* height: calc(100% - 70px); */
+    margin-top: 70px;
+position: relative;
 }

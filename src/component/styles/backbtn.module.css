@@ -1,0 +1,29 @@
+/* project close button styling */
+.closebtn {
+    position: absolute;
+    top: 25px;
+    left: 40px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #000;
+    display: flex;
+    gap: 10px;
+    border: 1px solid transparent;
+    padding: 10px 15px; 
+    border-radius: 40px;
+    /* z-index: 1; */
+  }
+  .closebtn:hover{
+    border: 1px solid var(--black-color);
+  }
+  .closebtn:active{
+    border: 1px solid var(--green-color);
+    background-color: var(--green-color);
+  }

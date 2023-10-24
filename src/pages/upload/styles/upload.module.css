@@ -1,7 +1,8 @@
 .uploadpagemainbody{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+        position: relative;
+        justify-content: space-between;
     /* align-items: center; */
 
     /* navbar section of upload page */
@@ -58,6 +59,7 @@
         flex-direction: column;
         gap: 40px;
         justify-content: space-between;
+        /* position: relative; */
     
         .selecttype{
             display: flex;
@@ -91,6 +93,10 @@
             font-weight: 900;
             letter-spacing: 3px;
             font-size: 22px;
+        }
+
+        .uploaddiv{
+            display: none;
         }
     
         .formdiv{
@@ -129,7 +135,7 @@
                     }
 
                     .tagdiv{
-                        display: flex;
+                        display: none;
                         flex-direction: column;
                         justify-content: center;
                         gap: 10px;
@@ -145,7 +151,7 @@
                 content: " ";
                 background: #000;
                 height: 100%;
-                width: 2px;
+                width: 1px;
                 right: -20px;
                 top: 0;
                 border-radius: 20px;
@@ -192,7 +198,7 @@
                 content: " ";
                 background: #000;
                 width: 100%;
-                height: 2px;
+                height: 1px;
                 bottom: -20px;
                 left: 0;
                 border-radius: 20px;
@@ -216,15 +222,9 @@
                 .divclosebtn:active{
                     color: var(--redorange-color);
                 }
-    
-                .textarea, .imagearea{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 20px;
-                }
                 .textareainputfield{
-                    min-width: 96%;
+                    max-width: 100%;
+                    min-width: 100%;
                     width: 100%;
                     min-height: 150px;
                     max-height: 250px;
@@ -236,25 +236,45 @@
                 .textareainputfield::placeholder{
                     text-transform: uppercase;
                 }
-    
-                .imagefield{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 10px;
 
-                    .imageinputfield{
-                        min-width: 96%;
-                        width: 100%;
-                        padding: 20px 20px;
-                        border-radius: 10px;
-                        border: 2px solid var(--charcoal-color);
-                        letter-spacing: 2px;
-                    }
-                    .imageinputfield::placeholder{
-                        text-transform: uppercase;
-                    }
+                .inputfield{
+                    padding: 15px 20px;
+                    font-weight: 500;
+                    letter-spacing: 2px;
+                    text-transform: lowercase;
+                    font-size: 12px;
+                    outline: none;
+                    border: 2px solid var(--charcoal-color);
+                    border-radius: 10px;
                 }
+                .inputfield::placeholder{
+                    text-transform: uppercase;
+                }
+                .inputfield:active{
+                    border: 2px solid var(--green-color);
+                }
+
+                .text{
+                    text-align: center;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+
+                .selectsection{
+                    padding: 15px 40px;
+                    font-weight: 500;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 13px;
+                    outline: none;
+                    border: 2px solid var(--charcoal-color);
+                    border-radius: 10px;
+                }
+    
+                
             }
     
             .btnsection{

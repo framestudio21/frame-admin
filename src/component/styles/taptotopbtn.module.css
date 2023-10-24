@@ -1,0 +1,21 @@
+.taptotopbtn{
+    position: fixed;
+    bottom: 10px;
+    right: 5px;
+    background-color: var(--green-color);
+    padding: 10px;
+    font-size: 35px;
+    z-index: 99;
+    color: var(--white-color);
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50px;
+}
+.taptotopbtn:active{
+    background: var(--white-color);
+    color: var(--black-color);
+}

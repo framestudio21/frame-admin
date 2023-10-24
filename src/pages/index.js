@@ -12,6 +12,9 @@ import Order from "./order"
 import Upload from "./upload"
 import Comment from "./comment"
 
+// sub pages
+import BlogUpload from "./blog/blogupload"
+
 
 
 import Errorpage from "./_error"
@@ -38,7 +41,7 @@ function Index() {
         <Route path="/upload" element={<Upload />} />
         <Route path="/comment" element={<Comment />} />
 
-
+        <Route path="/blog/blogupload" element={<BlogUpload />} />
 
 
         <Route path="*" element={<Errorpage />} />

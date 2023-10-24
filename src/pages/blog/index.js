@@ -1,11 +1,11 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
+import Dynamic from "next/dynamic";
 
 import Navbar from "../../component/navbar"
 
 import styles from "./styles/bloghome.module.css"
 
-export default dynamic(() => Promise.resolve(Blog), { ssr: false });
+export default Dynamic(() => Promise.resolve(Blog), { ssr: false });
 const Blog = () => {
 return (
     <>
@@ -13,11 +13,11 @@ return (
     <main className="mainpagebody">
         <div className={styles.addblogbtn}>
             <p className={styles.text}>add a new blog</p>
-            <Link href="#">
+            <Link href="/blog/blogupload">
             <button className={styles.addbtn}>add new</button>
             </Link>
         </div>
-        <div className={styles.blogcard}>
+        <div className={styles.blogdatasection}>
             
         </div>
     </main>
