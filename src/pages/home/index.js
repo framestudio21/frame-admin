@@ -1,15 +1,16 @@
-import Link from "next/link";
-import Dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 import Image from "next/image";
+import Link from "next/link";
 
-import Navbar from "../../component/navbar"
+import Navbar from "../../component/navbar";
+import UploadFooterBar from "../../component/uploadnavbar";
+import TaptoTop from "../../component/taptotopbtn";
 
-import styles from "./styles/bloghome.module.css"
+import styles from "./styles/home.module.css";
 
-export default Dynamic(() => Promise.resolve(Blog), { ssr: false });
-const Blog = () => {
-
-      // sample data
+export default dynamic(() => Promise.resolve(Home), { ssr: false });
+const Home = () => {
+  // sample data
   const product = [
     {
       thumbnail:
@@ -124,18 +125,13 @@ const Blog = () => {
       },
   ];
 
-return (
+  return (
     <>
-    <Navbar/>
-    <main className="mainpagebody">
-        <div className={styles.addblogbtn}>
-            <p className={styles.text}>add a new blog</p>
-            <Link href="/blog/upload">
-            <button className={styles.addbtn}>add new</button>
-            </Link>
-        </div>
-        <div className={styles.blogdatasection}>
-            {product.map((item) => {
+      <Navbar />
+      <main className="mainpagebody">
+        <UploadFooterBar />
+        <div className={styles.homemainbody}>
+          {product.map((item) => {
             return (
               <>
                 <div className={styles.cardmainbody}>
@@ -171,6 +167,8 @@ return (
             );
           })}
         </div>
-    </main>
+        <TaptoTop />
+      </main>
     </>
-)}
+  );
+};

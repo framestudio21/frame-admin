@@ -31,7 +31,7 @@ export default function navbar() {
             <Link href="/data" className={styles.navlist}>data section</Link>
             <Link href="/order" className={styles.navlist}>order section</Link>
             <Link href="/contact" className={styles.navlist}>contact section</Link>
-            <Link href="/comment" className={styles.navlist}>comment section</Link>
+            <Link href="/advertisement" className={styles.navlist}>advertisement section</Link>
             <button className={styles.logoutbtn}><BsArrowLeft/>Logout</button>
         </div>
         </nav>

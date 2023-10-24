@@ -16,6 +16,6 @@
     border-radius: 50px;
 }
 .taptotopbtn:active{
-    background: var(--white-color);
-    color: var(--black-color);
+    background: var(--blue-color);
+    color: var(--white-color);
 }

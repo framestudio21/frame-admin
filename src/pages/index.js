@@ -10,10 +10,11 @@ import Contact from "./contact"
 import Data from "./data"
 import Order from "./order"
 import Upload from "./upload"
-import Comment from "./comment"
+import Advertisement from "./advertisement"
 
 // sub pages
-import BlogUpload from "./blog/blogupload"
+import BlogUpload from "./blog/upload"
+import AdvertisementUpload from "./advertisement/upload"
 
 
 
@@ -39,9 +40,11 @@ function Index() {
         <Route path="/data" element={<Data />} />
         <Route path="/order" element={<Order />} />
         <Route path="/upload" element={<Upload />} />
-        <Route path="/comment" element={<Comment />} />
+        <Route path="/advertisement" element={<Advertisement />} />
 
-        <Route path="/blog/blogupload" element={<BlogUpload />} />
+
+        <Route path="/blog/upload" element={<BlogUpload />} />
+        <Route path="/advertisement/upload" element={<AdvertisementUpload />} />
 
 
         <Route path="*" element={<Errorpage />} />

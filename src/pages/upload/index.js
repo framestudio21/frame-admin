@@ -201,7 +201,7 @@ const Upload = () => {
               </select>
             </div>
 
-            {/* graphic upload form */}
+            {/* product upload form */}
             <div className={styles.uploaddiv} id="product-upload-div">
             <form className={styles.formdiv} onSubmit={handleSubmit} method="POST" id="product"
             >
@@ -220,6 +220,12 @@ const Upload = () => {
                     type="text"
                     placeholder="enter project thumbnail link"
                     name="thumbnail"
+                    className={styles.inputfield}
+                  />
+                  <input
+                    type="text"
+                    placeholder="enter project author"
+                    name="author"
                     className={styles.inputfield}
                   />
                   <input
@@ -421,6 +427,12 @@ const Upload = () => {
                     type="text"
                     placeholder="enter project thumbnail link"
                     name="thumbnail"
+                    className={styles.inputfield}
+                  />
+                  <input
+                    type="text"
+                    placeholder="enter project author"
+                    name="author"
                     className={styles.inputfield}
                   />
                   <input
