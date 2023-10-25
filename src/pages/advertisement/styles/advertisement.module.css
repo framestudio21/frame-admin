@@ -129,6 +129,17 @@
                         letter-spacing: 1px;
                     }
 
+                    .descriptionsection{
+                        text-align: justify;
+              font-size: 12px;
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              -moz-line-clamp: 2;
+              -moz-box-orient: vertical;
+                    }
+
                     .categorytagsection{
                         display: flex;
                         flex-direction: column;

@@ -1,0 +1,128 @@
+.advertisementuploadmaindiv{
+    width: 100%;
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    /* align-items: center; */
+    position: relative;
+
+    .headersection{
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .fromdivsection{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .inputfield{
+            width: 100%;
+            padding: 15px 30px;
+            border: 2px solid var(--black-color);
+            border-radius: 40px;
+            /* text-transform: lowercase; */
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 12px;
+        }
+        .inputfield::placeholder{
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .selectfielddiv{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .selectfield{
+            width: 100%;
+            padding: 15px 30px;
+            border: 2px solid var(--black-color);
+            border-radius: 40px;
+            /* text-transform: lowercase; */
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 12px;
+        }
+        .selectfield{
+            text-transform: uppercase;
+        }
+
+        .tagdiv{
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+        }
+
+        .textarea{
+            max-width: 100%;
+            min-width: 100%;
+            max-height: 200px;
+            min-height: 200px;
+            padding: 15px 30px;
+            border: 2px solid var(--black-color);
+            border-radius: 12px;
+            /* text-transform: uppercase; */
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 12px;
+        }
+        .textarea::placeholder{
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .btnsection{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+
+            .submitbtn, .resetbtn{
+                padding: 15px 40px;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font-weight: 700;
+                border: 2px solid var(--black-color);
+                background: var(--black-color);
+                color: var(--white-color);
+                border-radius: 40px;
+                cursor: pointer;
+            }
+            .submitbtn:hover{
+                border: 2px solid var(--black-color);
+                background: none;
+                color: var(--black-color);
+            }
+            .submitbtn:active{
+                background: var(--green-color);
+                color: var(--black-color);
+                border: 2px solid var(--green-color);
+            }
+            .resetbtn:hover{
+                border: 2px solid var(--redorange-color);
+                background: none;
+                color: var(--redorange-color);
+            }
+            .resetbtn:active{
+                background: var(--redorange-color);
+                color: var(--black-color);
+                border: 2px solid var(--redorange-color);
+            }
+        }
+    }
+}

@@ -36,7 +36,8 @@ const Advertisement = () => {
             time: "21:09 pm",
             category: "graphic",
             author: "sumit daury",
-            tag: "logo design"
+            tag: "logo design",
+            description: "https://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeg",
         },
         {
             name: "forum website design offer",
@@ -45,7 +46,8 @@ const Advertisement = () => {
             time: "21:09 pm",
             category: "website",
             author: "gourav daury",
-            tag: "logo design"
+            tag: "logo design",
+            description: "https://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeg",
         },
         {
             name: "typography design offer",
@@ -54,7 +56,8 @@ const Advertisement = () => {
             time: "21:09 pm",
             category: "graphic",
             author: "gourav daury",
-            tag: "logo design"
+            tag: "logo design",
+            description: "https://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeg",
         },
         {
             name: "typography design offer",
@@ -63,7 +66,8 @@ const Advertisement = () => {
             time: "21:09 pm",
             category: "website",
             author: "gourav daury",
-            tag: "logo design"
+            tag: "logo design",
+            description: "https://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeg",
         },
         {
             name: "forum website design offer",
@@ -72,7 +76,8 @@ const Advertisement = () => {
             time: "21:09 pm",
             category: "website",
             author: "gourav daury",
-            tag: "logo design"
+            tag: "logo design",
+            description: "https://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeg",
         },
         {
             name: "typography design offer",
@@ -81,7 +86,8 @@ const Advertisement = () => {
             time: "21:09 pm",
             category: "website",
             author: "gourav daury",
-            tag: "logo design"
+            tag: "logo design",
+            description: "https://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeg",
         },
         {
             name: "logo design offer",
@@ -90,7 +96,8 @@ const Advertisement = () => {
             time: "21:09 pm",
             category: "graphic",
             author: "sumit daury",
-            tag: "logo design"
+            tag: "logo design",
+            description: "https://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeg",
         },
         {
             name: "typography design offer",
@@ -99,7 +106,8 @@ const Advertisement = () => {
             time: "21:09 pm",
             category: "website",
             author: "gourav daury",
-            tag: "logo design"
+            tag: "logo design",
+            description: "https://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeghttps://images.pexels.com/photos/18047275/pexels-photo-18047275/free-photo-of-hands-with-wristwatch.jpeg",
         },
     ]
   return (
@@ -138,6 +146,7 @@ const Advertisement = () => {
                                     <div className={styles.date}>{item.time}</div>
                                 </div>
                                 <div className={styles.headersection}>{item.name}</div>
+                                <div className={styles.descriptionsection}>{item.description}</div>
                                 <div className={styles.categorytagsection}>
                                     <div className={styles.category}>category : {item.category}</div>
                                 <div className={styles.tag}>tag : {item.tag}</div>
