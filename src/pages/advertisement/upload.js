@@ -11,25 +11,23 @@ const Advertisement = () => {
 
     // product tag input selection
     useEffect(() => {
-        const selectElement = document.getElementById("product-category-select");
-        const productTagGraphic = document.getElementById("graphic-tag-div");
-        const productTagWebsite = document.getElementById("website-tag-div");
-    
-        selectElement.addEventListener("change", (event) => {
-          if (event.target.value === "graphic") {
-            productTagGraphic.style.display = "flex";
-            productTagWebsite.style.display = "none";
-          } 
-          else if (event.target.value === "website") {
-            productTagWebsite.style.display = "flex";
-            productTagGraphic.style.display = "none";
-          }
-          else {
-            productTagGraphic.style.display = "none";
-            productTagWebsite.style.display = "none";
-          }
-        })
-      })
+      const selectElement = document.getElementById("product-category-select");
+      const productTagGraphic = document.getElementById("graphic-tag-div");
+      const productTagWebsite = document.getElementById("website-tag-div");
+  
+      selectElement.addEventListener("change", (event) => {
+        if (event.target.value === "graphic") {
+          productTagGraphic.style.display = "flex";
+          productTagWebsite.style.display = "none";
+        } else if (event.target.value === "website") {
+          productTagWebsite.style.display = "flex";
+          productTagGraphic.style.display = "none";
+        } else {
+          productTagGraphic.style.display = "none";
+          productTagWebsite.style.display = "none";
+        }
+      });
+    });
 
 return (
     <>
@@ -42,6 +40,7 @@ return (
                 <form method="POST" className={styles.fromdivsection}>
                     <input name="name" placeholder="enter advertisement name" className={styles.inputfield} />
                     <input name="thumbnail" placeholder="enter advertisement thumbnail" className={styles.inputfield} />
+
                     <div className={styles.selectfielddiv}>
                     <label for="category" className={styles.text}>select the category</label>
                   <select
@@ -55,7 +54,7 @@ return (
                   </select>
                     </div>
 
-                  <div className={styles.tagdiv} id="graphic-design-tag">
+                  <div className={styles.tagdiv} id="graphic-tag-div">
                   <label id="graphic" className={styles.text}>select the tag</label>
                   <select id="graphic"
                      name="tag" className={styles.selectfield}
@@ -75,7 +74,8 @@ return (
                     <option value="typography">typography</option>
                   </select>
                   </div>
-                  <div className={styles.tagdiv} id="website-design-tag">
+
+                  <div className={styles.tagdiv} id="website-tag-div">
                   <label id="website" className={styles.text}>select the website tag</label>
                   <select id="website" name="tag" className={styles.selectfield}>
                   <option value="">Select website tag type</option>
@@ -92,6 +92,7 @@ return (
                     <option value="other">other type site</option>
                   </select>
                   </div>
+
                   <textarea name="description" className={styles.textarea} placeholder="enter advertisement description" />
 
                   <div className={styles.btnsection}>

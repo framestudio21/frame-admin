@@ -28,7 +28,6 @@ export default function navbar() {
             <Link href="/home" className={styles.navlist}>Home</Link>
             <Link href="/upload" className={styles.navlist}>Upload section</Link>
             <Link href="/blog" className={styles.navlist}>blog section</Link>
-            <Link href="/data" className={styles.navlist}>data section</Link>
             <Link href="/order" className={styles.navlist}>order section</Link>
             <Link href="/contact" className={styles.navlist}>contact section</Link>
             <Link href="/advertisement" className={styles.navlist}>advertisement section</Link>

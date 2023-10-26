@@ -7,7 +7,6 @@ import Login from "./login"
 import Home from "./home"
 import Blog from "./blog"
 import Contact from "./contact"
-import Data from "./data"
 import Order from "./order"
 import Upload from "./upload"
 import Advertisement from "./advertisement"
@@ -16,9 +15,16 @@ import Advertisement from "./advertisement"
 import BlogUpload from "./blog/upload"
 import AdvertisementUpload from "./advertisement/upload"
 
+// home sub pages
+import Product from './home/product';
+import Digitalart from './home/digitalart';
+import Aiart from './home/aiart';
+import photography from './home/photography';
+
 
 
 import Errorpage from "./_error"
+import Photography from './home/photography';
 
 export default dynamic(() => Promise.resolve(Index), { ssr: false });
 function Index() {
@@ -37,14 +43,21 @@ function Index() {
         <Route path="/home" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/data" element={<Data />} />
         <Route path="/order" element={<Order />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/advertisement" element={<Advertisement />} />
 
 
         <Route path="/blog/upload" element={<BlogUpload />} />
+
+        
         <Route path="/advertisement/upload" element={<AdvertisementUpload />} />
+
+
+        <Route path="/home/product" element={<Product />} />
+        <Route path="/home/digitalart" element={<Digitalart />} />
+        <Route path="/home/aiart" element={<Aiart />} />
+        <Route path="/home/photography" element={<Photography />} />
 
 
         <Route path="*" element={<Errorpage />} />
