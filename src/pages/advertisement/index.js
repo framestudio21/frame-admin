@@ -119,7 +119,7 @@ const Advertisement = () => {
         <div className={styles.advertisementtopnavbar}>
           <div className={styles.text}>add a new addvertisement</div>
           <Link href="/advertisement/upload">
-            <button className={styles.btn}>add new</button>
+            <button className={styles.btn}>add new advertisement</button>
           </Link>
         </div>
         <div className={styles.advertisementbody}>

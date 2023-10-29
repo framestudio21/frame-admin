@@ -10,6 +10,7 @@ import Contact from "./contact"
 import Order from "./order"
 import Upload from "./upload"
 import Advertisement from "./advertisement"
+import Comment from "./comment"
 
 // sub pages
 import BlogUpload from "./blog/upload"
@@ -19,7 +20,7 @@ import AdvertisementUpload from "./advertisement/upload"
 import Product from './home/product';
 import Digitalart from './home/digitalart';
 import Aiart from './home/aiart';
-import photography from './home/photography';
+import Photography from './home/photography';
 
 
 
@@ -46,6 +47,7 @@ function Index() {
         <Route path="/order" element={<Order />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/advertisement" element={<Advertisement />} />
+        <Route path="/comment" element={<Comment />} />
 
 
         <Route path="/blog/upload" element={<BlogUpload />} />
