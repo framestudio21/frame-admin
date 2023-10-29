@@ -42,3 +42,33 @@
         border: 1px solid var(--green-color);
     }
 }
+
+@media screen and (min-width: 769px) {
+    /* STYLES HERE */
+
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) { 
+    /* STYLES HERE */
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* STYLES HERE */
+    .uploadnavbarmaindiv{
+        width: 100%;
+        left: 0;
+        top: 60px;
+
+        flex-direction: column;
+        padding: 10px;
+        height: 80px;
+
+        .text{
+            font-size: 14px;
+        }
+        .link{
+            padding: 5px 25px;
+            font-size: 14px;
+        }
+    }
+}

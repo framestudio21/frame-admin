@@ -95,3 +95,41 @@
     }
   }
 }
+
+
+@media screen and (min-width: 769px) {
+  /* STYLES HERE */
+
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) { 
+  /* STYLES HERE */
+}
+
+@media only screen and (max-device-width: 480px) {
+  /* STYLES HERE */
+
+  .navbarmainbody{
+    width: 100%;
+    height: 60px;
+
+    .sidenavbar{
+      flex-direction: row-reverse;
+      width: 100%;
+      height: 60px;
+      align-items: center;
+      padding: 10px;
+
+      .logo{
+        transform: rotate(0);
+      }
+    }
+
+    .navbody{
+      width: 100%;
+      left: 0;
+      top: 55px;
+      text-align: center;
+    }
+  }
+}

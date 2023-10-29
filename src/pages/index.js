@@ -22,10 +22,7 @@ import Digitalart from './home/digitalart';
 import Aiart from './home/aiart';
 import Photography from './home/photography';
 
-
-
 import Errorpage from "./_error"
-import Photography from './home/photography';
 
 export default dynamic(() => Promise.resolve(Index), { ssr: false });
 function Index() {
@@ -55,15 +52,13 @@ function Index() {
         
         <Route path="/advertisement/upload" element={<AdvertisementUpload />} />
 
+        <Route path="*" element={<Errorpage />} />
+        <Route path="/404" element={<Errorpage />} />
 
         <Route path="/home/product" element={<Product />} />
         <Route path="/home/digitalart" element={<Digitalart />} />
         <Route path="/home/aiart" element={<Aiart />} />
         <Route path="/home/photography" element={<Photography />} />
-
-
-        <Route path="*" element={<Errorpage />} />
-        <Route path="/404" element={<Errorpage />} />
       </Routes>
     </Router>
       

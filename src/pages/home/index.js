@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 import Navbar from "../../component/navbar";
 import UploadFooterBar from "../../component/uploadnavbar";
@@ -98,139 +98,130 @@ const Home = () => {
       <main className="mainpagebody">
         <UploadFooterBar />
         <div className={styles.homepagemainbody}>
-
-
           <div className={styles.productrowmaindiv}>
             <div className={styles.displaynamediv}>
               <div className={styles.text}>product</div>
             </div>
             <div className={styles.displayitemdiv}>
-                
-                {product.slice(0, 7).map((item) => {
-                  return (
-                    <div className={styles.cardbody}>
-                    <Image src={item.thumbnail} width={0} height={0} className={styles.imagesection} alt={item.name}/>
+              {product.slice(0, 7).map((item, i) => {
+                return (
+                  <div className={styles.cardbody} key={i}>
+                    <Image
+                      src={item.thumbnail}
+                      width={0}
+                      height={0}
+                      className={styles.imagesection}
+                      alt={item.name}
+                      loading="lazy"
+                    />
                     <div className={styles.text}>
-                    <BsFillArrowRightCircleFill />
+                      <BsFillArrowRightCircleFill />
                       <br />
                       <p>{item.name}</p>
                     </div>
                   </div>
-                  )
-                })}
+                );
+              })}
 
-
-                <Link href="/home/product" className={styles.seemorediv}>
-                  <BsFillArrowRightCircleFill className={styles.icon}/>
-                  <div className={styles.text}>
-                  see more
-                </div>
-                </Link>
-
-
+              <Link href="/home/product" className={styles.seemorediv}>
+                <BsFillArrowRightCircleFill className={styles.icon} />
+                <div className={styles.text}>see more</div>
+              </Link>
             </div>
           </div>
-
-
 
           <div className={styles.digitalartrowmaindiv}>
             <div className={styles.displaynamediv}>
               <div className={styles.text}>digital art</div>
             </div>
             <div className={styles.displayitemdiv}>
-
-
-            {product.slice(0, 7).map((item) => {
-                  return (
-                    <div className={styles.cardbody}>
-                    <Image src={item.thumbnail} width={0} height={0} className={styles.imagesection} alt={item.name}/>
+              {product.slice(0, 7).map((item) => {
+                return (
+                  <div className={styles.cardbody}>
+                    <Image
+                      src={item.thumbnail}
+                      width={0}
+                      height={0}
+                      className={styles.imagesection}
+                      alt={item.name}
+                    />
                     <div className={styles.text}>
-                    <BsFillArrowRightCircleFill />
+                      <BsFillArrowRightCircleFill />
                       <br />
                       <p>{item.name}</p>
                     </div>
                   </div>
-                  )
-                })}
+                );
+              })}
 
-
-                <Link href="/home/digitalart" className={styles.seemorediv}>
-                  <BsFillArrowRightCircleFill className={styles.icon}/>
-                  <div className={styles.text}>
-                  see more
-                </div>
-                </Link>
-
+              <Link href="/home/digitalart" className={styles.seemorediv}>
+                <BsFillArrowRightCircleFill className={styles.icon} />
+                <div className={styles.text}>see more</div>
+              </Link>
             </div>
           </div>
-
 
           <div className={styles.aiartrowmaindiv}>
             <div className={styles.displaynamediv}>
               <div className={styles.text}>ai art</div>
             </div>
             <div className={styles.displayitemdiv}>
-
-                
-            {product.slice(0, 7).map((item) => {
-                  return (
-                    <div className={styles.cardbody}>
-                    <Image src={item.thumbnail} width={0} height={0} className={styles.imagesection} alt={item.name}/>
+              {product.slice(0, 7).map((item) => {
+                return (
+                  <div className={styles.cardbody}>
+                    <Image
+                      src={item.thumbnail}
+                      width={0}
+                      height={0}
+                      className={styles.imagesection}
+                      alt={item.name}
+                    />
                     <div className={styles.text}>
-                    <BsFillArrowRightCircleFill />
+                      <BsFillArrowRightCircleFill />
                       <br />
                       <p>{item.name}</p>
                     </div>
                   </div>
-                  )
-                })}
+                );
+              })}
 
-
-                <Link href="/home/aiart" className={styles.seemorediv}>
-                  <BsFillArrowRightCircleFill className={styles.icon}/>
-                  <div className={styles.text}>
-                  see more
-                </div>
-                </Link>
-
+              <Link href="/home/aiart" className={styles.seemorediv}>
+                <BsFillArrowRightCircleFill className={styles.icon} />
+                <div className={styles.text}>see more</div>
+              </Link>
             </div>
           </div>
-
 
           <div className={styles.photographyrowmaindiv}>
             <div className={styles.displaynamediv}>
               <div className={styles.text}>photography</div>
             </div>
             <div className={styles.displayitemdiv}>
-
-                
-            {product.slice(0, 7).map((item) => {
-                  return (
-                    <div className={styles.cardbody}>
-                    <Image src={item.thumbnail} width={0} height={0} className={styles.imagesection} alt={item.name}/>
+              {product.slice(0, 7).map((item) => {
+                return (
+                  <div className={styles.cardbody}>
+                    <Image
+                      src={item.thumbnail}
+                      width={0}
+                      height={0}
+                      className={styles.imagesection}
+                      alt={item.name}
+                    />
                     <div className={styles.text}>
-                    <BsFillArrowRightCircleFill />
+                      <BsFillArrowRightCircleFill />
                       <br />
                       <p>{item.name}</p>
                     </div>
                   </div>
-                  )
-                })}
+                );
+              })}
 
-
-                <Link href="/home/photography" className={styles.seemorediv}>
-                  <BsFillArrowRightCircleFill className={styles.icon}/>
-                  <div className={styles.text}>
-                  see more
-                </div>
-                </Link>
-
+              <Link href="/home/photography" className={styles.seemorediv}>
+                <BsFillArrowRightCircleFill className={styles.icon} />
+                <div className={styles.text}>see more</div>
+              </Link>
             </div>
           </div>
-
-
-
-
         </div>
         <TaptoTop />
       </main>

@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 import styles from "../styles/login.module.css";
 
@@ -8,6 +9,13 @@ import logo from "../image/spacelogoblack.svg";
 
 export default dynamic(() => Promise.resolve(Home), { ssr: false });
 function Home() {
+
+  const [formData, setFormData] = useState({});
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  }
+  console.log(formData)
 
   return (
     <>
@@ -19,6 +27,7 @@ function Home() {
             alt="frame-logo"
             width={0}
             height={0}
+            loading="lazy"
           />
           <div className={styles.topsection}>
             <div className={styles.header}>welcome back admin</div>
@@ -26,19 +35,22 @@ function Home() {
               enter your credentials to access your account.
             </div>
           </div>
-          <form className={styles.bottomsection}>
+          <form method="POST" className={styles.bottomsection}>
             <input
               name="userid"
               className={styles.inputfield}
               type="text"
-              placeholder="enter your userid"
+                    value={formData.userid || ""}
+                    onChange={handleInputChange}
+                    placeholder="enter your userid"
             />
-            {/* <input name="email" className={styles.inputfield} type="email" placeholder="enter your email"/> */}
             <input
               name="password"
               className={styles.inputfield}
               type="password"
-              placeholder="enter your password"
+                    value={formData.password || ""}
+                    onChange={handleInputChange}
+                    placeholder="enter your password"
             />
             <button type="submit" className={styles.submitbtn}>
               login

@@ -131,23 +131,25 @@ const Home = () => {
       <main className="mainpagebody">
         <UploadFooterBar />
         <div className={styles.subpagemainbody}>
+          
           <div className={styles.filternav}>
-            select the category :
             <button className={styles.filterbtn}>all</button>
             <button className={styles.filterbtn}>graphic</button>
             <button className={styles.filterbtn}>product</button>
           </div>
+
           <div className={styles.cardmainbody}>
-          {product.map((item) => {
+          {product.map((item, index) => {
             return (
               <>
-                <div className={styles.cardbody}>
+                <div className={styles.cardbody} key={index}>
                   <Image
                     src={item.thumbnail}
                     className={styles.imagesection}
                     width={0}
                     height={0}
                     alt={item.name}
+                    loading="lazy"
                   />
                   <div className={styles.bodysection}>
                     <div className={styles.datecategorysection}>
