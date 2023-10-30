@@ -8,13 +8,16 @@ import styles from "../styles/login.module.css";
 import logo from "../image/spacelogoblack.svg";
 
 export default dynamic(() => Promise.resolve(Home), { ssr: false });
-function Home() {
+const Home = () => {
 
   const [formData, setFormData] = useState({});
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   }
+  const PostData = async (e) => {
+    e.preventDefault();
+  };
   console.log(formData)
 
   return (
@@ -52,7 +55,7 @@ function Home() {
                     onChange={handleInputChange}
                     placeholder="enter your password"
             />
-            <button type="submit" className={styles.submitbtn}>
+            <button onClick={PostData} type="submit" className={styles.submitbtn}>
               login
             </button>
           </form>
