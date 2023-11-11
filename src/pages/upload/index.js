@@ -1,5 +1,5 @@
 import Dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { AiFillFileText, AiFillFileImage } from "react-icons/ai";
 import { FaHeading, FaQuoteRight } from "react-icons/fa";
 
@@ -7,22 +7,53 @@ import Navbar from "../../component/navbar";
 import TaptoTop from "../../component/taptotopbtn"
 import Backbtn from "../../component/backbtn"
 
+import { AuthContext } from "../../component/context";
+
 import styles from "./styles/upload.module.css";
 
-const Input = (props) => {
-  return (
-    <div className={styles.textarea}>
-      <textarea
-        // name={props.placeholder}
-        className={styles.textareainputfield}
-        placeholder={"enter your " + props.placeholder}
-      />
-    </div>
-  );
-};
+// const Input = (props) => {
+//   return (
+//     <div className={styles.textarea}>
+//       <textarea
+//         // name={props.placeholder}
+//         className={styles.textareainputfield}
+//         placeholder={"enter your " + props.placeholder}
+//       />
+//     </div>
+//   );
+// };
 
 export default Dynamic(() => Promise.resolve(Upload), { ssr: false });
 const Upload = () => {
+
+  const {isAdmin} = useContext(AuthContext)
+  if (isAdmin == "no" || !isAdmin)
+    return (
+      <>
+        <div className="restrictedmainbody">
+          <div className="restrictedbody">
+            <h1 className="restrictedbodyh1">Restricted Web Page</h1>
+            <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button>
+          </div>
+        </div>
+      </>
+    );
+
+
+    const Input = (props) => {
+      return (
+        <div className={styles.textarea}>
+          <textarea
+            name={props.placeholder}
+            className={styles.textareainputfield}
+            placeholder={"enter your " + props.placeholder}
+            // value={formData.{props.placeholder} || ""}
+            onChange={handleInputChange}
+          />
+        </div>
+      );
+    };
+
 
   // digital art tag input selection
   useEffect(() => {
