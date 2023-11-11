@@ -1,8 +1,10 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Slider from 'react-slick';
+import { useContext } from "react";
 import Image from "next/image";
 
+import {AuthContext} from '../../component/context'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
@@ -12,6 +14,20 @@ import styles from "./styles/advertisement.module.css";
 
 export default dynamic(() => Promise.resolve(Advertisement), { ssr: false });
 const Advertisement = () => {
+
+    const { isAdmin } = useContext(AuthContext);
+  if (isAdmin == "no" || !isAdmin)
+    return (
+      <>
+        <div className="restrictedmainbody">
+          <div className="restrictedbody">
+            <h1 className="restrictedbodyh1">Restricted Web Page</h1>
+            {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
+          </div>
+        </div>
+      </>
+    );
+
     // slider settings
     var settings = {
         // dots: true,

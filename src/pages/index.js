@@ -1,31 +1,33 @@
-import Head from 'next/head'
-import dynamic from 'next/dynamic';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Head from "next/head";
+import dynamic from "next/dynamic";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useContext, useEffect } from "react";
 
+import { AuthContext } from "../component/context";
 
-import Login from "./login"
-import Home from "./home"
-import Blog from "./blog"
-import Contact from "./contact"
-import Order from "./order"
-import Upload from "./upload"
-import Advertisement from "./advertisement"
-import Comment from "./comment"
+import Login from "./login";
+import Home from "./home";
+import Blog from "./blog";
+import Contact from "./contact";
+import Order from "./order";
+import Upload from "./upload";
+import Advertisement from "./advertisement";
+import Comment from "./comment";
 
 // sub pages
-import BlogUpload from "./blog/upload"
-import AdvertisementUpload from "./advertisement/upload"
+import BlogUpload from "./blog/upload";
+import AdvertisementUpload from "./advertisement/upload";
 
 // home sub pages
-import Product from './home/product';
-import Digitalart from './home/digitalart';
-import Aiart from './home/aiart';
-import Photography from './home/photography';
+import Product from "./home/product";
+import Digitalart from "./home/digitalart";
+import Aiart from "./home/aiart";
+import Photography from "./home/photography";
 
-import Errorpage from "./_error"
+import Errorpage from "./_error";
 
-export default dynamic(() => Promise.resolve(Index), { ssr: false });
-function Index() {
+export default dynamic(() => Promise.resolve(App), { ssr: false });
+const App = () => {
   return (
     <>
       <Head>
@@ -36,32 +38,32 @@ function Index() {
       </Head>
 
       <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/advertisement" element={<Advertisement />} />
-        <Route path="/comment" element={<Comment />} />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/advertisement" element={<Advertisement />} />
+          <Route path="/comment" element={<Comment />} />
 
+          <Route path="/blog/upload" element={<BlogUpload />} />
 
-        <Route path="/blog/upload" element={<BlogUpload />} />
+          <Route
+            path="/advertisement/upload"
+            element={<AdvertisementUpload />}
+          />
 
-        
-        <Route path="/advertisement/upload" element={<AdvertisementUpload />} />
+          <Route path="*" element={<Errorpage />} />
+          <Route path="/404" element={<Errorpage />} />
 
-        <Route path="*" element={<Errorpage />} />
-        <Route path="/404" element={<Errorpage />} />
-
-        <Route path="/home/product" element={<Product />} />
-        <Route path="/home/digitalart" element={<Digitalart />} />
-        <Route path="/home/aiart" element={<Aiart />} />
-        <Route path="/home/photography" element={<Photography />} />
-      </Routes>
-    </Router>
-      
+          <Route path="/home/product" element={<Product />} />
+          <Route path="/home/digitalart" element={<Digitalart />} />
+          <Route path="/home/aiart" element={<Aiart />} />
+          <Route path="/home/photography" element={<Photography />} />
+        </Routes>
+      </Router>
     </>
-  )
-}
+  );
+};

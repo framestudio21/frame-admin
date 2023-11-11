@@ -1,24 +1,52 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-
+import { useState, useContext } from "react";
+import {useRouter} from 'next/router'
 import styles from "../styles/login.module.css";
 
 import logo from "../image/spacelogoblack.svg";
+import { AuthContext } from '../component/context'
 
 export default dynamic(() => Promise.resolve(Home), { ssr: false });
 const Home = () => {
-
+  
+  const router = useRouter()
   const [formData, setFormData] = useState({});
+  const { setIsAdmin } = useContext(AuthContext);
+
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   }
+
   const PostData = async (e) => {
     e.preventDefault();
+
+    const {email, pass} = formData
+    console.log(email + " and " +pass);
+
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/admin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        pass,
+      }),
+    });
+    const data = await res.json();
+    if (data.status === 200) {
+      alert(data.success);
+      setIsAdmin("yes");
+      router.push("/home");
+      setFormData({})
+    } else if (data.status) {
+      setIsAdmin("no");
+      alert(data.failed);
+    }
   };
-  console.log(formData)
 
   return (
     <>
@@ -38,24 +66,24 @@ const Home = () => {
               enter your credentials to access your account.
             </div>
           </div>
-          <form method="POST" className={styles.bottomsection}>
+          <form method="POST" className={styles.bottomsection} onSubmit={PostData}>
             <input
-              name="userid"
+              name="email"
               className={styles.inputfield}
               type="text"
-                    value={formData.userid || ""}
+                    value={formData.email || ""}
                     onChange={handleInputChange}
-                    placeholder="enter your userid"
+                    placeholder="enter your user id"
             />
             <input
-              name="password"
+              name="pass"
               className={styles.inputfield}
               type="password"
-                    value={formData.password || ""}
+                    value={formData.pass || ""}
                     onChange={handleInputChange}
                     placeholder="enter your password"
             />
-            <button onClick={PostData} type="submit" className={styles.submitbtn}>
+            <button type="submit" className={styles.submitbtn}>
               login
             </button>
           </form>
