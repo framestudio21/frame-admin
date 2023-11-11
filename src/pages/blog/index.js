@@ -2,12 +2,27 @@ import Link from "next/link";
 import Dynamic from "next/dynamic";
 import Image from "next/image";
 
+import {AuthContext} from '../../component/context' 
 import Navbar from "../../component/navbar"
 
 import styles from "./styles/bloghome.module.css"
+import { useContext } from "react";
 
 export default Dynamic(() => Promise.resolve(Blog), { ssr: false });
 const Blog = () => {
+
+  const {isAdmin} = useContext(AuthContext)
+  if (isAdmin == "no" || !isAdmin)
+    return (
+      <>
+        <div className="restrictedmainbody">
+          <div className="restrictedbody">
+            <h1 className="restrictedbodyh1">Restricted Web Page</h1>
+            {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
+          </div>
+        </div>
+      </>
+    );
 
       // sample data
   const product = [
