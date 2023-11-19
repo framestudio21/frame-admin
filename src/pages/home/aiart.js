@@ -1,7 +1,8 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-
+import { useContext } from "react";
+import {AuthContext} from '../../component/context'
 import Navbar from "../../component/navbar";
 import UploadFooterBar from "../../component/uploadnavbar";
 import TaptoTop from "../../component/taptotopbtn";
@@ -10,6 +11,20 @@ import styles from "./styles/subpage.module.css";
 
 export default dynamic(() => Promise.resolve(Home), { ssr: false });
 const Home = () => {
+
+  const {isAdmin} = useContext(AuthContext)
+  if (isAdmin == "no" || !isAdmin)
+    return (
+      <>
+        <div className="restrictedmainbody">
+          <div className="restrictedbody">
+            <h1 className="restrictedbodyh1">Restricted Web Page</h1>
+            {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
+          </div>
+        </div>
+      </>
+    );
+
   // sample data
   const product = [
     {

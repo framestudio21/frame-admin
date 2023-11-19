@@ -2,6 +2,8 @@ import Dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import { AiFillFileText, AiFillFileImage } from "react-icons/ai";
 import { FaHeading, FaQuoteRight } from "react-icons/fa";
+import { useContext } from "react";
+import {AuthContext} from '../../component/context' 
 
 import Navbar from "../../component/navbar";
 import BackBtn from "../../component/backbtn"
@@ -25,6 +27,20 @@ const Input = (props) => {
 
 export default Dynamic(() => Promise.resolve(BlogUpload), { ssr: false });
 const BlogUpload = () => {
+
+  const {isAdmin} = useContext(AuthContext)
+  if (isAdmin == "no" || !isAdmin)
+    return (
+      <>
+        <div className="restrictedmainbody">
+          <div className="restrictedbody">
+            <h1 className="restrictedbodyh1">Restricted Web Page</h1>
+            {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
+          </div>
+        </div>
+      </>
+    );
+    
   // blog tag input selection
   useEffect(() => {
     const selectElement = document.getElementById("product-category-select");
