@@ -11,17 +11,17 @@ export default dynamic(() => Promise.resolve(Advertisement), { ssr: false });
 const Advertisement = () => {
 
   const { isAdmin } = useContext(AuthContext)
-  // if (isAdmin == "no" || !isAdmin)
-  //   return (
-  //     <>
-  //       <div className="restrictedmainbody">
-  //         <div className="restrictedbody">
-  //           <h1 className="restrictedbodyh1">Restricted Web Page</h1>
-  //           {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
+  if (isAdmin == "no" || !isAdmin)
+    return (
+      <>
+        <div className="restrictedmainbody">
+          <div className="restrictedbody">
+            <h1 className="restrictedbodyh1">Restricted Web Page</h1>
+            {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
+          </div>
+        </div>
+      </>
+    );
 
   // product tag input selection
   useEffect(() => {

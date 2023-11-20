@@ -7,7 +7,6 @@ import { AuthContext } from "../component/context";
 
 import Login from "./login";
 import Home from "./home";
-import Blog from "./blog";
 import Contact from "./contact";
 import Order from "./order";
 import Upload from "./upload";
@@ -15,7 +14,6 @@ import Advertisement from "./advertisement";
 import Comment from "./comment";
 
 // sub pages
-import BlogUpload from "./blog/upload";
 import AdvertisementUpload from "./advertisement/upload";
 
 // home sub pages
@@ -41,14 +39,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/order" element={<Order />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/advertisement" element={<Advertisement />} />
           <Route path="/comment" element={<Comment />} />
 
-          <Route path="/blog/upload" element={<BlogUpload />} />
 
           <Route
             path="/advertisement/upload"
