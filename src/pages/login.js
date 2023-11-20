@@ -22,19 +22,13 @@ const Home = () => {
 
   const PostData = async (e) => {
     e.preventDefault();
-
     const {email, pass} = formData
-    console.log(email + " and " +pass);
-
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "/admin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        email,
-        pass,
-      }),
+      body: JSON.stringify({email, pass}),
     });
     const data = await res.json();
     if (data.status === 200) {

@@ -124,10 +124,10 @@ const Upload = () => {
 
   // function fot new form adding
   const [inputList, setInputList] = useState([]);
-  const [textno, setTextNo] = useState(0);
-  const [imageno, setImageNo] = useState(0);
-  const [headingno, setHeadingNo] = useState(0);
-  const [quoteno, setQuoteNo] = useState(0);
+  const [textno, setTextNo] = useState(1);
+  const [imageno, setImageNo] = useState(1);
+  const [headingno, setHeadingNo] = useState(1);
+  const [quoteno, setQuoteNo] = useState(1);
   const onAddTextBtnClick = () => {
     setTextNo(textno + 1);
     setInputList(
@@ -167,76 +167,17 @@ const Upload = () => {
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
-    console.log(formData);
   }
   const changeDesignType = (e) => {
     setDesignType(e.target.value);
   };
   const PostData = async (e) => {
     e.preventDefault();
-
-    const {
-      designtype,
-      name,
-      text1,
-      text2,
-      text3,
-      thumbnail,
-      imagelink,
-      imagelink1,
-      imagelink2,
-      imagelink3,
-      imagelink4,
-      imagelink5,
-      height,
-      width,
-      author,
-      tag1,
-      tag2,
-      tag3,
-      tag4,
-      tag5,
-      createdate,
-      facebooklink,
-      twitterlink,
-      instagramlink,
-      githublink,
-    } = formData;
-
     await fetch(process.env.NEXT_PUBLIC_API_URL + "/" + designType, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        designtype,
-        name,
-        text1,
-        text2,
-        text3,
-        thumbnail,
-        imagelink,
-        imagelink1,
-        imagelink2,
-        imagelink3,
-        imagelink4,
-        imagelink5,
-        height,
-        width,
-        author,
-        tag1,
-        tag2,
-        tag3,
-        tag4,
-        tag5,
-        createdate,
-        facebooklink,
-        twitterlink,
-        instagramlink,
-        githublink,
-      }),
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({designType, ...formData}),
     });
-
     setFormData({});
   };
   
@@ -550,14 +491,6 @@ const Upload = () => {
                       onChange={handleInputChange}
                     />
                     <input
-                      type="text"
-                      placeholder="enter project author"
-                      name="author"
-                      className={styles.inputfield}
-                      value={formData.author || ""}
-                      onChange={handleInputChange}
-                    />
-                    <input
                       type="date"
                       name="date"
                       placeholder="enter project creation date"
@@ -798,60 +731,6 @@ const Upload = () => {
                       <option value="graphic">graphic design</option>
                       <option value="website">website design</option>
                     </select>
-
-                    <div className={styles.tagdiv} id="graphic-design-tag">
-                      <label id="graphic" className={styles.text}>
-                        select the tag
-                      </label>
-                      <select
-                        id="graphic"
-                        name="tag"
-                        className={styles.inputfield}
-                        value={formData.tag || ""}
-                        onChange={handleInputChange}
-                      >
-                        <option value="">Select graphic tag type</option>
-                        <option value="logo">logo</option>
-                        <option value="visualidentity">visual identity</option>
-                        <option value="advertisement">advertisement</option>
-                        <option value="publication">publication</option>
-                        <option value="motion">motion</option>
-                        <option value="environmental">environmental</option>
-                        <option value="informational">informational</option>
-                        <option value="branding">branding</option>
-                        <option value="illustration">illustration</option>
-                        <option value="layout">layout</option>
-                        <option value="packaging">packaging</option>
-                        <option value="typography">typography</option>
-                      </select>
-                    </div>
-                    <div className={styles.tagdiv} id="website-design-tag">
-                      <label id="website" className={styles.text}>
-                        select the tag
-                      </label>
-                      <select
-                        id="website"
-                        name="tag"
-                        className={styles.inputfield}
-                        value={formData.tag || ""}
-                        onChange={handleInputChange}
-                      >
-                        <option value="">Select website tag type</option>
-                        <option value="e-commercs">e-commerce site</option>
-                        <option value="business">business site</option>
-                        <option value="blog">blog site</option>
-                        <option value="portfolio">portfolio site</option>
-                        <option value="personal">personal site</option>
-                        <option value="informational">
-                          informational site
-                        </option>
-                        <option value="event">event site</option>
-                        <option value="nonprofit">nonprofit site</option>
-                        <option value="membership">membership site</option>
-                        <option value="online">online forum</option>
-                        <option value="other">other type site</option>
-                      </select>
-                    </div>
                   </div>
                   <div className={styles.divrightside}>
                     <label className={styles.text}>
@@ -935,7 +814,7 @@ const Upload = () => {
                   />
                   <input
                     className={styles.inputfield}
-                    name="website"
+                    name="aiwebsiteurl"
                     placeholder="enter ai website name or url"
                     value={formData.aiwebsiteurl || ""}
                     onChange={handleInputChange}
