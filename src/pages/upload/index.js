@@ -261,7 +261,7 @@ const Upload = () => {
                       value={formData.date || ""}
                       onChange={handleInputChange}
                     />
-                    <label for="category" className={styles.text}>
+                    <label htmlFor="category" className={styles.text}>
                       select the category
                     </label>
                     <select
@@ -646,7 +646,7 @@ const Upload = () => {
                     onChange={handleInputChange}
                   />
 
-                  <label for="imageratio" className={styles.text}>
+                  <label htmlFor="imageratio" className={styles.text}>
                     select the image size ratio
                   </label>
                   <select
@@ -820,7 +820,7 @@ const Upload = () => {
                     onChange={handleInputChange}
                   />
 
-                  <label for="imageratio" className={styles.text}>
+                  <label htmlFor="imageratio" className={styles.text}>
                     select the image size ratio
                   </label>
                   <select
@@ -1017,7 +1017,7 @@ const Upload = () => {
                     onChange={handleInputChange}
                   />
 
-                  <label for="imageratio" className={styles.text}>
+                  <label htmlFor="imageratio" className={styles.text}>
                     select the image size ratio
                   </label>
                   <select

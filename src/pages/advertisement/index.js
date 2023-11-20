@@ -141,20 +141,18 @@ const Advertisement = () => {
         <div className={styles.advertisementbody}>
             <div className={styles.advertisementcarousel}>
                 <Slider {...settings} className={styles.sliderbody}>
-                    {data.map((item) => {
+                    {data.map((item, i) => {
                         return (
-                            <>
-                            <Image src={item.thumbnail} alt={item.name} width={0} height={0} className={styles.sliderimage}/>
-                            </>
+                            <Image src={item.thumbnail} alt={item.name} width={0} height={0} className={styles.sliderimage} key={i}/>
                         )
                     })}
                 </Slider>
             </div>
             <div className={styles.advertisementitem}>
-                {data.map((item) => {
+                {data.map((item,i) => {
                     return (
                         <>
-                        <div className={styles.advertisementcarddiv}>
+                        <div className={styles.advertisementcarddiv} key={i}>
                             <Image src={item.thumbnail} width={0} height={0} alt={item.name} className={styles.cardimage}/>
                             <div className={styles.cardbody}>
                                 <div className={styles.datetimesection}>

@@ -152,9 +152,9 @@ const Home = () => {
               <div className={styles.text}>digital art</div>
             </div>
             <div className={styles.displayitemdiv}>
-              {product.slice(0, 7).map((item) => {
+              {product.slice(0, 7).map((item,i) => {
                 return (
-                  <div className={styles.cardbody}>
+                  <div className={styles.cardbody} key={i}>
                     <Image
                       src={item.thumbnail}
                       width={0}
@@ -183,9 +183,9 @@ const Home = () => {
               <div className={styles.text}>ai art</div>
             </div>
             <div className={styles.displayitemdiv}>
-              {product.slice(0, 7).map((item) => {
+              {product.slice(0, 7).map((item,i) => {
                 return (
-                  <div className={styles.cardbody}>
+                  <div className={styles.cardbody} key={i}>
                     <Image
                       src={item.thumbnail}
                       width={0}
@@ -214,9 +214,9 @@ const Home = () => {
               <div className={styles.text}>photography</div>
             </div>
             <div className={styles.displayitemdiv}>
-              {product.slice(0, 7).map((item) => {
+              {product.slice(0, 7).map((item,i) => {
                 return (
-                  <div className={styles.cardbody}>
+                  <div className={styles.cardbody} key={i}>
                     <Image
                       src={item.thumbnail}
                       width={0}
@@ -245,43 +245,3 @@ const Home = () => {
     </>
   );
 };
-
-{
-  /* <div className={styles.homemainbody}>
-{product.map((item) => {
-  return (
-    <>
-      <div className={styles.cardmainbody}>
-        <Image
-          src={item.thumbnail}
-          className={styles.imagesection}
-          width={0}
-          height={0}
-          alt={item.name}
-        />
-        <div className={styles.bodysection}>
-          <div className={styles.datecategorysection}>
-            <div className={styles.date}>{item.date}</div>
-            <div className={styles.category}>{item.category}</div>
-          </div>
-          <div className={styles.headersection}>{item.name}</div>
-          <div className={styles.textsection}>{item.description}</div>
-          <div className={styles.barsection}></div>
-          <div className={styles.btnsection}>
-            <Link href="#">
-              <button className={styles.btn}>review</button>
-            </Link>
-            <Link href="#">
-              <button className={styles.btn}>update</button>
-            </Link>
-            <Link href="#">
-              <button className={styles.btn}>delete</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-})}
-</div> */
-}
