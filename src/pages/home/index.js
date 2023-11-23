@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+import { useRouter} from "next/router"
 import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
@@ -15,6 +17,11 @@ import { AuthContext } from "../../component/context";
 export default dynamic(() => Promise.resolve(Home), { ssr: false });
 const Home = () => {
 
+  const router = useRouter()
+  const logout = () => {
+    router.push("/");
+  }
+
   const {isAdmin} = useContext(AuthContext)
   if (isAdmin == "no" || !isAdmin)
     return (
@@ -22,7 +29,7 @@ const Home = () => {
         <div className="restrictedmainbody">
           <div className="restrictedbody">
             <h1 className="restrictedbodyh1">Restricted Web Page</h1>
-            {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
+            <button onClick={() => logout()} className="restrictedbodybtn">Refresh</button>
           </div>
         </div>
       </>
@@ -109,18 +116,30 @@ const Home = () => {
     },
   ];
 
+  // home page product api data
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const url = process.env.NEXT_PUBLIC_API_URL + "/product";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch(() => router.push("/404"));
+  }, []);
+
   return (
     <>
       <Navbar />
       <main className="mainpagebody">
         <UploadFooterBar />
         <div className={styles.homepagemainbody}>
+
+          {/* product div */}
           <div className={styles.productrowmaindiv}>
             <div className={styles.displaynamediv}>
               <div className={styles.text}>product</div>
             </div>
             <div className={styles.displayitemdiv}>
-              {product.slice(0, 7).map((item, i) => {
+              {products.slice(0, 7).map((item, i) => {
                 return (
                   <div className={styles.cardbody} key={i}>
                     <Image
@@ -128,13 +147,13 @@ const Home = () => {
                       width={0}
                       height={0}
                       className={styles.imagesection}
-                      alt={item.name}
+                      alt={item.title}
                       loading="lazy"
                     />
                     <div className={styles.text}>
                       <BsFillArrowRightCircleFill />
                       <br />
-                      <p>{item.name}</p>
+                      <p>{item.title}</p>
                     </div>
                   </div>
                 );
@@ -147,6 +166,7 @@ const Home = () => {
             </div>
           </div>
 
+          {/* digital art div */}
           <div className={styles.digitalartrowmaindiv}>
             <div className={styles.displaynamediv}>
               <div className={styles.text}>digital art</div>
@@ -178,6 +198,7 @@ const Home = () => {
             </div>
           </div>
 
+          {/* ai art div */}
           <div className={styles.aiartrowmaindiv}>
             <div className={styles.displaynamediv}>
               <div className={styles.text}>ai art</div>
@@ -209,6 +230,7 @@ const Home = () => {
             </div>
           </div>
 
+          {/* photography div */}
           <div className={styles.photographyrowmaindiv}>
             <div className={styles.displaynamediv}>
               <div className={styles.text}>photography</div>
@@ -239,6 +261,7 @@ const Home = () => {
               </Link>
             </div>
           </div>
+
         </div>
         <TaptoTop />
       </main>

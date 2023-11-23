@@ -96,9 +96,9 @@
                   font-size: 12px;
                   overflow: hidden;
                   display: -webkit-box;
-                  -webkit-line-clamp: 2;
+                  -webkit-line-clamp: 5;
                   -webkit-box-orient: vertical;
-                  -moz-line-clamp: 2;
+                  -moz-line-clamp: 5;
                   -moz-box-orient: vertical;
               }
       

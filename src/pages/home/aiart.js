@@ -146,11 +146,11 @@ const Home = () => {
       <main className="mainpagebody">
         <UploadFooterBar />
         <div className={styles.subpagemainbody}>
-          <div className={styles.filternav}>
-            select the category :
-            <button className={styles.filterbtn}>all</button>
-            <button className={styles.filterbtn}>graphic</button>
-            <button className={styles.filterbtn}>product</button>
+        <div className={styles.filternav}>
+            <Link href="/home/product"><button className={styles.filterbtn}>product</button></Link>
+            <Link href="/home/digitalart"><button className={styles.filterbtn}>digital art</button></Link>
+            <Link href="/home/aiart"><button className={styles.filterbtn}>ai art</button></Link>
+            <Link href="/home/photography"><button className={styles.filterbtn}>photography</button></Link>
           </div>
           <div className={styles.cardmainbody}>
           {product.map((item) => {
