@@ -22,99 +22,18 @@ const Home = () => {
     router.push("/");
   }
 
-  const {isAdmin} = useContext(AuthContext)
-  if (isAdmin == "no" || !isAdmin)
-    return (
-      <>
-        <div className="restrictedmainbody">
-          <div className="restrictedbody">
-            <h1 className="restrictedbodyh1">Restricted Web Page</h1>
-            <button onClick={() => logout()} className="restrictedbodybtn">Refresh</button>
-          </div>
-        </div>
-      </>
-    );
-
-  // sample data
-  const product = [
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-    {
-      thumbnail:
-        "https://images.pexels.com/photos/18401184/pexels-photo-18401184/free-photo-of-a-man-standing-head-to-head-with-a-horse.jpeg",
-      name: "logo design",
-      category: "graphic",
-      date: "wed 12 oct 2023",
-    },
-  ];
+  // const {isAdmin} = useContext(AuthContext)
+  // if (isAdmin == "no" || !isAdmin)
+  //   return (
+  //     <>
+  //       <div className="restrictedmainbody">
+  //         <div className="restrictedbody">
+  //           <h1 className="restrictedbodyh1">Restricted Web Page</h1>
+  //           <button onClick={() => logout()} className="restrictedbodybtn">Refresh</button>
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
 
   // home page product api data
   const [products, setProducts] = useState([]);
@@ -125,6 +44,36 @@ const Home = () => {
       .then((data) => setProducts(data))
       .catch(() => router.push("/404"));
   }, []);
+
+    // home page digital art api data
+    const [digitalArts, setDigitalArts] = useState([]);
+    useEffect(() => {
+      const url = process.env.NEXT_PUBLIC_API_URL + "/digitalart";
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setDigitalArts(data))
+        .catch(() => router.push("/404"));
+    }, []);
+
+    // home page ai art api data
+    const [aiArts, setaiArts] = useState([]);
+    useEffect(() => {
+      const url = process.env.NEXT_PUBLIC_API_URL + "/aiart";
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setaiArts(data))
+        .catch(() => router.push("/404"));
+    }, []);
+
+    // home page photography api data
+    const [photographys, setPhotographys] = useState([]);
+    useEffect(() => {
+      const url = process.env.NEXT_PUBLIC_API_URL + "/photography";
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => setPhotographys(data))
+        .catch(() => router.push("/404"));
+    }, []);
 
   return (
     <>
@@ -139,9 +88,9 @@ const Home = () => {
               <div className={styles.text}>product</div>
             </div>
             <div className={styles.displayitemdiv}>
-              {products.slice(0, 7).map((item, i) => {
+              {products.slice(0, 10).map((item) => {
                 return (
-                  <div className={styles.cardbody} key={i}>
+                  <div className={styles.cardbody} key={item._id}>
                     <Image
                       src={item.thumbnail}
                       width={0}
@@ -172,20 +121,20 @@ const Home = () => {
               <div className={styles.text}>digital art</div>
             </div>
             <div className={styles.displayitemdiv}>
-              {product.slice(0, 7).map((item,i) => {
+              {digitalArts.slice(0, 10).map((item) => {
                 return (
-                  <div className={styles.cardbody} key={i}>
+                  <div className={styles.cardbody} key={item._id}>
                     <Image
                       src={item.thumbnail}
                       width={0}
                       height={0}
                       className={styles.imagesection}
-                      alt={item.name}
+                      alt={item.title}
                     />
                     <div className={styles.text}>
                       <BsFillArrowRightCircleFill />
                       <br />
-                      <p>{item.name}</p>
+                      <p>{item.title}</p>
                     </div>
                   </div>
                 );
@@ -204,20 +153,20 @@ const Home = () => {
               <div className={styles.text}>ai art</div>
             </div>
             <div className={styles.displayitemdiv}>
-              {product.slice(0, 7).map((item,i) => {
+              {aiArts.slice(0, 10).map((item) => {
                 return (
-                  <div className={styles.cardbody} key={i}>
+                  <div className={styles.cardbody} key={item._id}>
                     <Image
                       src={item.thumbnail}
                       width={0}
                       height={0}
                       className={styles.imagesection}
-                      alt={item.name}
+                      alt={item.title}
                     />
                     <div className={styles.text}>
                       <BsFillArrowRightCircleFill />
                       <br />
-                      <p>{item.name}</p>
+                      <p>{item.title}</p>
                     </div>
                   </div>
                 );
@@ -236,20 +185,20 @@ const Home = () => {
               <div className={styles.text}>photography</div>
             </div>
             <div className={styles.displayitemdiv}>
-              {product.slice(0, 7).map((item,i) => {
+              {photographys.slice(0, 10).map((item) => {
                 return (
-                  <div className={styles.cardbody} key={i}>
+                  <div className={styles.cardbody} key={item._id}>
                     <Image
                       src={item.thumbnail}
                       width={0}
                       height={0}
                       className={styles.imagesection}
-                      alt={item.name}
+                      alt={item.title}
                     />
                     <div className={styles.text}>
                       <BsFillArrowRightCircleFill />
                       <br />
-                      <p>{item.name}</p>
+                      <p>{item.tile}</p>
                     </div>
                   </div>
                 );

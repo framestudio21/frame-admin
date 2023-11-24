@@ -84,6 +84,7 @@
               }
       
               .headersection{
+                font-size: 18px;
                   text-align: center;
                   text-transform: uppercase;
                   font-weight: 700;
@@ -100,6 +101,20 @@
                   -webkit-box-orient: vertical;
                   -moz-line-clamp: 5;
                   -moz-box-orient: vertical;
+              }
+
+              .authorsection{
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 700;
+                margin: -4px 0;
+                letter-spacing: 1px;
+              }
+
+              .datesection{
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 700px;
               }
       
               .barsection{

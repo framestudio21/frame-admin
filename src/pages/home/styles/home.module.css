@@ -42,9 +42,9 @@
       /* width: calc(100% - 100px); */
       width: 100%;
       display: flex;
-      flex-wrap: wrap;
-      /* overflow-x: scroll; */
-      /* overflow-y: hidden; */
+      /* flex-wrap: wrap; */
+      overflow-x: scroll;
+      overflow-y: hidden;
       /* align-items: center; */
       gap: 5px;
 

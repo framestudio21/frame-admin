@@ -5,15 +5,15 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useContext } from "react";
 
-import { AuthContext } from "../../component/context";
-import Navbar from "../../component/navbar";
-import UploadFooterBar from "../../component/uploadnavbar";
-import TaptoTop from "../../component/taptotopbtn";
+import { AuthContext } from "../../../component/context";
+import Navbar from "../../../component/navbar";
+import UploadFooterBar from "../../../component/uploadnavbar";
+import TaptoTop from "../../../component/taptotopbtn";
 
-import styles from "./styles/subpage.module.css"
+import styles from "../styles/subpage.module.css"
 
-export default dynamic(() => Promise.resolve(DigitalArt), { ssr: false });
-const DigitalArt = () => {
+export default dynamic(() => Promise.resolve(Product), { ssr: false });
+const Product = () => {
   const router = useRouter();
   const logout = () => {
     router.push("/");
@@ -38,7 +38,7 @@ const DigitalArt = () => {
   const [productAll, setProductAll] = useState([]);
   const [refresh, setRefresh] = useState(false);
   useEffect(() => {
-    const url = process.env.NEXT_PUBLIC_API_URL + "/aiart";
+    const url = process.env.NEXT_PUBLIC_API_URL + "/product";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {setProduct(data); setProductAll(data)})
@@ -57,7 +57,7 @@ console.log(product);
   const deleteProduct = async (id) => {
     const isOkay = confirm("Are you sure to delete it?");
     if (isOkay) {
-      fetch(process.env.NEXT_PUBLIC_API_URL+`/aiart/${id}`, { method: "delete" })
+      fetch(process.env.NEXT_PUBLIC_API_URL+`/product/${id}`, { method: "delete" })
         .then(() => alert("done"))
         .then(() => {
           if (refresh == true) {
@@ -78,11 +78,11 @@ console.log(product);
 
           
           <div className={styles.filternav}>
-            <Link href="/home/product">
-              <button className={styles.filterbtn}>product</button>
-            </Link>
             <Link href="/home/digitalart">
-              <button className={styles.filterbtn}>digitalart</button>
+              <button className={styles.filterbtn}>digital art</button>
+            </Link>
+            <Link href="/home/aiart">
+              <button className={styles.filterbtn}>ai art</button>
             </Link>
             <Link href="/home/photography">
               <button className={styles.filterbtn}>photography</button>
@@ -125,12 +125,6 @@ console.log(product);
                       <div className={styles.textsection}>
                         {item.description}
                       </div>
-                      <div className={styles.authorsection}>
-                        Author Name : {item.author}
-                      </div>
-                      <div className={styles.authorsection}>
-                        Image Size : {item.imageratio}
-                      </div>
                       <div className={styles.datesection}>
                         created At : {createdatdate}
                         <br/>
@@ -138,6 +132,9 @@ console.log(product);
                       </div>
                       <div className={styles.barsection}></div>
                       <div className={styles.btnsection}>
+                        <Link href="#">
+                          <button className={styles.btn}>review</button>
+                        </Link>
                         <Link href="#">
                           <button className={styles.btn}>update</button>
                         </Link>

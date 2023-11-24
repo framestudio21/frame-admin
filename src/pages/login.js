@@ -32,7 +32,7 @@ const Home = () => {
     });
     const data = await res.json();
     if (data.status === 200) {
-      alert(data.success);
+      // alert(data.success);
       setIsAdmin("yes");
       router.push("/home");
       setFormData({})
