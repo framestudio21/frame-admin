@@ -3,13 +3,13 @@ import { useEffect, useState, useContext } from "react";
 import { AiFillFileText, AiFillFileImage } from "react-icons/ai";
 import { FaHeading, FaQuoteRight } from "react-icons/fa";
 
-import Navbar from "../../component/navbar";
-import TaptoTop from "../../component/taptotopbtn";
-import Backbtn from "../../component/backbtn";
+import Navbar from "../component/navbar";
+import TaptoTop from "../component/taptotopbtn";
+import Backbtn from "../component/backbtn";
 
-import { AuthContext } from "../../component/context";
+import { AuthContext } from "../component/context";
 
-import styles from "./styles/upload.module.css";
+import styles from "../styles/upload.module.css";
 
 export default Dynamic(() => Promise.resolve(Upload), { ssr: false });
 const Upload = () => {

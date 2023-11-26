@@ -11,7 +11,6 @@ import Contact from "./contact";
 import Order from "./order";
 import Upload from "./upload";
 import Advertisement from "./advertisement";
-import Comment from "./comment";
 
 // sub pages
 import AdvertisementUpload from "./advertisement/upload";
@@ -43,8 +42,6 @@ const App = () => {
           <Route path="/order" element={<Order />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/advertisement" element={<Advertisement />} />
-          <Route path="/comment" element={<Comment />} />
-
 
           <Route
             path="/advertisement/upload"

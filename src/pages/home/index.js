@@ -8,7 +8,6 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 import Navbar from "../../component/navbar";
 import UploadFooterBar from "../../component/uploadnavbar";
-import TaptoTop from "../../component/taptotopbtn";
 
 import styles from "./styles/home.module.css";
 
@@ -100,7 +99,7 @@ const Home = () => {
                       loading="lazy"
                     />
                     <div className={styles.text}>
-                      <BsFillArrowRightCircleFill />
+                      <BsFillArrowRightCircleFill className={styles.icon} />
                       <br />
                       <p>{item.title}</p>
                     </div>
@@ -132,7 +131,7 @@ const Home = () => {
                       alt={item.title}
                     />
                     <div className={styles.text}>
-                      <BsFillArrowRightCircleFill />
+                      <BsFillArrowRightCircleFill className={styles.icon} />
                       <br />
                       <p>{item.title}</p>
                     </div>
@@ -164,7 +163,7 @@ const Home = () => {
                       alt={item.title}
                     />
                     <div className={styles.text}>
-                      <BsFillArrowRightCircleFill />
+                      <BsFillArrowRightCircleFill className={styles.icon} />
                       <br />
                       <p>{item.title}</p>
                     </div>
@@ -196,7 +195,7 @@ const Home = () => {
                       alt={item.title}
                     />
                     <div className={styles.text}>
-                      <BsFillArrowRightCircleFill />
+                      <BsFillArrowRightCircleFill className={styles.icon} />
                       <br />
                       <p>{item.tile}</p>
                     </div>
@@ -212,7 +211,6 @@ const Home = () => {
           </div>
 
         </div>
-        <TaptoTop />
       </main>
     </>
   );

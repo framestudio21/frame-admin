@@ -135,7 +135,7 @@ console.log(product);
                         <Link href="#">
                           <button className={styles.btn}>review</button>
                         </Link>
-                        <Link href="#">
+                        <Link href={`/home/product/${item._id}`}>
                           <button className={styles.btn}>update</button>
                         </Link>
                           <button onClick={() => deleteProduct(item._id)} className={styles.btn}>delete</button>
