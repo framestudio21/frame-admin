@@ -10,18 +10,18 @@ import styles from "./styles/upload.module.css"
 export default dynamic(() => Promise.resolve(Advertisement), { ssr: false });
 const Advertisement = () => {
 
-  const { isAdmin } = useContext(AuthContext)
-  if (isAdmin == "no" || !isAdmin)
-    return (
-      <>
-        <div className="restrictedmainbody">
-          <div className="restrictedbody">
-            <h1 className="restrictedbodyh1">Restricted Web Page</h1>
-            {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
-          </div>
-        </div>
-      </>
-    );
+  // const { isAdmin } = useContext(AuthContext)
+  // if (isAdmin == "no" || !isAdmin)
+  //   return (
+  //     <>
+  //       <div className="restrictedmainbody">
+  //         <div className="restrictedbody">
+  //           <h1 className="restrictedbodyh1">Restricted Web Page</h1>
+  //           {/* <button onClick={() => loginPage()} className="restrictedbodybtn">Refresh</button> */}
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
 
   // product tag input selection
   useEffect(() => {
@@ -71,12 +71,13 @@ const Advertisement = () => {
           <div className={styles.headersection}>upload advertisement</div>
           <div>
             <form method="POST" className={styles.fromdivsection} onSubmit={handleSubmit}>
-              <input type="text" name="name" value={data.name || ""} onChange={handleData} placeholder="enter advertisement name" className={styles.inputfield} />
-              <input type="url" name="thumbnail" value={data.thumbnail || ""} onChange={handleData} placeholder="enter advertisement thumbnail" className={styles.inputfield} />
+              <input type="text" name="name" value={data.name || ""} onChange={handleData} placeholder="enter advertisement name" className={styles.inputfield} required />
+              <input type="url" name="thumbnail" value={data.thumbnail || ""} onChange={handleData} placeholder="enter advertisement thumbnail" className={styles.inputfield} required />
 
               <div className={styles.selectfielddiv}>
                 <label htmlFor="category" className={styles.text}>select the category</label>
                 <select
+                required
                   id="product-category-select"
                   name="category"
                   onChange={handleData}
@@ -92,6 +93,7 @@ const Advertisement = () => {
               <div className={styles.tagdiv} id="graphic-tag-div">
                 <label id="graphic" className={styles.text}>select the tag</label>
                 <select id="graphic"
+                required
                   name="tag" onChange={handleData} value={data.tag || ""} className={styles.selectfield}
                 >
                   <option value="">Select graphic tag type</option>
@@ -112,7 +114,7 @@ const Advertisement = () => {
 
               <div className={styles.tagdiv} id="website-tag-div">
                 <label id="website" className={styles.text}>select the website tag</label>
-                <select id="website" onChange={handleData} value={data.tag || ""} name="tag" className={styles.selectfield}>
+                <select required id="website" onChange={handleData} value={data.tag || ""} name="tag" className={styles.selectfield}>
                   <option value="">Select website tag type</option>
                   <option value="e-commercs">e-commerce site</option>
                   <option value="business">business site</option>
@@ -128,7 +130,7 @@ const Advertisement = () => {
                 </select>
               </div>
 
-              <textarea name="description" onChange={handleData} value={data.description || ""} className={styles.textarea} placeholder="enter advertisement description"></textarea>
+              <textarea required name="description" onChange={handleData} value={data.description || ""} className={styles.textarea} placeholder="enter advertisement description"></textarea>
 
               <div className={styles.btnsection}>
                 <button className={styles.submitbtn} type="submit" >submit</button>

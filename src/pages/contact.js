@@ -33,8 +33,8 @@ const Contact = () => {
   //       </>
   //     );
 
+  const [refresh, setRefresh] = useState(false); 
   const [data, setData] = useState([]);
-  const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     const url = process.env.NEXT_PUBLIC_API_URL + "/contact";
     fetch(url)
@@ -57,6 +57,31 @@ const Contact = () => {
         .catch((err) => alert(err));
     }
   };
+
+  const [sendData, setSendData] = useState({})
+  const handleData = (e) => {
+    setSendData({ ...sendData, [e.target.name]: e.target.value })
+  }
+  const handleSubmit = async (id) => {
+    e.preventDefault()
+    const isOkay = confirm("Are you sure to delete it?");
+    if (isOkay) {
+      await fetch(process.env.NEXT_PUBLIC_API_URL + `/contact/${id}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({...sendData}),
+      })
+        .then(() => alert("done"))
+        .then(() => {
+          if (refresh == true) {
+            setRefresh(false)
+          }
+          else setRefresh(true)
+        })
+        .catch((err) => alert(err));
+    }
+    // setData({})
+  }
 
   return (
     <>
@@ -106,16 +131,22 @@ const Contact = () => {
                       <span className={styles.fieldname}>date :</span>
                       {createdatdate}
                     </div>
+
+
+
                     <div className={styles.statusdiv}>
-                      <form className={styles.formdiv}>
-                      <select name="status" className={styles.selectinputdiv}>
-                        <option value=" " className={styles.optionfield}>select query status</option>
+                      <form className={styles.formdiv} onSubmit={() => handleSubmit(item._id)} method="POST">
+                      <select name="status" className={styles.selectinputdiv} value={item.status} onChange={handleData}>
+                        <option value="" className={styles.optionfield}>select query status</option>
                         <option value="pending" className={styles.optionfield}>pending status</option>
                         <option value="processing" className={styles.optionfield}>processing status</option>
                         <option value="complete" className={styles.optionfield}>complete status</option>
                       </select>
                       <button type="submit" className={styles.statusbtn}>set status</button>
                       </form>
+
+
+
                     </div>
                     <button className={styles.deletebtn} onClick={() => deleteProduct(item._id)} >delete</button>
                   </div>

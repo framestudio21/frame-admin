@@ -26,7 +26,7 @@
             width: 100%;
             padding: 15px 30px;
             border: 2px solid var(--black-color);
-            border-radius: 40px;
+            /* border-radius: 40px; */
             /* text-transform: lowercase; */
             letter-spacing: 2px;
             font-weight: 500;
@@ -50,7 +50,7 @@
             width: 100%;
             padding: 15px 30px;
             border: 2px solid var(--black-color);
-            border-radius: 40px;
+            /* border-radius: 40px; */
             /* text-transform: lowercase; */
             letter-spacing: 2px;
             font-weight: 500;
@@ -76,7 +76,7 @@
             min-height: 170px;
             padding: 15px 30px;
             border: 2px solid var(--black-color);
-            border-radius: 12px;
+            /* border-radius: 12px; */
             /* text-transform: uppercase; */
             letter-spacing: 2px;
             font-weight: 500;
@@ -99,15 +99,16 @@
                 letter-spacing: 5px;
                 font-weight: 700;
                 border: 2px solid var(--black-color);
-                background: var(--black-color);
-                color: var(--white-color);
-                border-radius: 40px;
+                /* background: var(--black-color); */
+                background: none;
+                /* color: var(--white-color); */
+                /* border-radius: 40px; */
                 cursor: pointer;
             }
             .submitbtn:hover{
                 border: 2px solid var(--black-color);
-                background: none;
-                color: var(--black-color);
+                background: var(--black-color);
+                color: var(--white-color);
             }
             .submitbtn:active{
                 background: var(--green-color);
