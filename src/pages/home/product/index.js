@@ -47,8 +47,7 @@ const Product = () => {
       })
       .catch(() => router.push("/404"));
   }, [refresh]);
-  console.log(product);
-  const productCategory = [...new Set(product.map((item) => item.category))];
+    const productCategory = [...new Set(product.map((item) => item.category))];
 
   const filterItem = (curcat) => {
     const newItem = product.filter((newCategory) => {
@@ -100,16 +99,8 @@ const Product = () => {
           <div className={styles.filternav}>
             {productCategory.map((item, index) => {
               return (
-                <>
-                  <button
-                    key={item._id}
-                    onClick={() => filterItem(item)}
-                    className={styles.filterbtn}
-                  >
-                    {item}
-                  </button>
-                </>
-              );
+                <button key={index} onClick={() => filterItem(item)} className={styles.filterbtn}>{item}</button>
+              )
             })}
             <button
               onClick={() => setProduct(productAll)}
@@ -125,7 +116,6 @@ const Product = () => {
               const createdatdate = new Date(item.createdAt).toUTCString();
               const updatedatdate = new Date(item.updatedAt).toUTCString();
               return (
-                <>
                   <div className={styles.cardbody} key={item._id}>
                     <Image
                       src={item.thumbnail}
@@ -166,7 +156,6 @@ const Product = () => {
                       </div>
                     </div>
                   </div>
-                </>
               );
             })}
           </div>
