@@ -5,15 +5,15 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useContext } from "react";
 
-import { AuthContext } from "../../component/context";
-import Navbar from "../../component/navbar";
-import UploadFooterBar from "../../component/uploadnavbar";
-import TaptoTop from "../../component/taptotopbtn";
+import { AuthContext } from "../../../component/context";
+import Navbar from "../../../component/navbar";
+import UploadFooterBar from "../../../component/uploadnavbar";
+import TaptoTop from "../../../component/taptotopbtn";
 
-import styles from "./styles/subpage.module.css"
+import styles from "../styles/subpage.module.css"
 
-export default dynamic(() => Promise.resolve(DigitalArt), { ssr: false });
-const DigitalArt = () => {
+export default dynamic(() => Promise.resolve(Photography), { ssr: false });
+const Photography = () => {
   const router = useRouter();
   const logout = () => {
     router.push("/");

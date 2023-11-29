@@ -13,7 +13,6 @@ const JoditEditor = Dynamic(() => import("jodit-react"), { ssr: false });
 
 export default Dynamic(() => Promise.resolve(ProductUpload), { ssr: false });
 const ProductUpload = () => {
-
   const router = useRouter();
 
   // const { isAdmin } = useContext(AuthContext);
@@ -74,11 +73,11 @@ const ProductUpload = () => {
 
   // function for reset button of form
   const reset = () => {
-    setContent('');
+    setContent("");
     setFormData({});
   };
 
-// console.log(formData);
+  // console.log(formData);
 
   return (
     <>
@@ -86,13 +85,13 @@ const ProductUpload = () => {
       <main className="mainpagebody">
         <div className={styles.uploadpagemainbody}>
           <div className={styles.headerNav}>project Upload Section</div>
-            {/* back btn */}
-            <div className={styles.backbtndiv}>
-            <button onClick={() => router.back()} className={styles.backbtn}>back</button>
-            </div>
+          {/* back btn */}
+          <div className={styles.backbtndiv}>
+            <button onClick={() => router.back()} className={styles.backbtn}>
+              back
+            </button>
+          </div>
           <form className={styles.productFromBody}>
-
-
             {/* mandatory field */}
             <div className={styles.mandatoryinputdiv}>
               <div className={styles.divleftside}>
@@ -187,114 +186,112 @@ const ProductUpload = () => {
 
             {/* tag & category selection section */}
             <label htmlFor="category" className={styles.text}>
-                  select the category
-                </label>
-                <select
-                  id="product-category-select"
-                  name="category"
-                  className={styles.inputfield}
-                  value={formData.category || ""}
-                  onChange={handleInputChange}
-                >
-                  <option value="">select type</option>
-                  <option value="graphic">graphic design</option>
-                  <option value="website">web design</option>
-                </select>
-
-                <div className={styles.tagdiv} id="graphic-tag-div">
-                  <label id="graphic" className={styles.text}>
-                    select the graphic tag
-                  </label>
-                  <select
-                    id="graphic"
-                    name="tag"
-                    className={styles.inputfield}
-                    value={formData.tag || ""}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Select type</option>
-                    <option value="logo">logo</option>
-                    <option value="visualidentity">visual identity</option>
-                    <option value="advertisement">advertisement</option>
-                    <option value="publication">publication</option>
-                    <option value="motion">motion</option>
-                    <option value="environmental">environmental</option>
-                    <option value="informational">informational</option>
-                    <option value="branding">branding</option>
-                    <option value="illustration">illustration</option>
-                    <option value="layout">layout</option>
-                    <option value="packaging">packaging</option>
-                    <option value="typography">typography</option>
-                  </select>
-                  <select
-                    id="graphic"
-                    name="tag1"
-                    className={styles.inputfield}
-                    value={formData.tag1 || ""}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Select type</option>
-                    <option value="logo">logo</option>
-                    <option value="visualidentity">visual identity</option>
-                    <option value="advertisement">advertisement</option>
-                    <option value="publication">publication</option>
-                    <option value="motion">motion</option>
-                    <option value="environmental">environmental</option>
-                    <option value="informational">informational</option>
-                    <option value="branding">branding</option>
-                    <option value="illustration">illustration</option>
-                    <option value="layout">layout</option>
-                    <option value="packaging">packaging</option>
-                    <option value="typography">typography</option>
-                  </select>
-                  <select
-                    id="graphic"
-                    name="tag2"
-                    className={styles.inputfield}
-                    value={formData.tag2 || ""}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Select type</option>
-                    <option value="logo">logo</option>
-                    <option value="visualidentity">visual identity</option>
-                    <option value="advertisement">advertisement</option>
-                    <option value="publication">publication</option>
-                    <option value="motion">motion</option>
-                    <option value="environmental">environmental</option>
-                    <option value="informational">informational</option>
-                    <option value="branding">branding</option>
-                    <option value="illustration">illustration</option>
-                    <option value="layout">layout</option>
-                    <option value="packaging">packaging</option>
-                    <option value="typography">typography</option>
-                  </select>
-                </div>
-
-                <div className={styles.tagdiv} id="website-tag-div">
-                  <label id="website" className={styles.text}>
-                    select the website tag
-                  </label>
-                  <select
-                    id="website"
-                    name="tag"
-                    className={styles.inputfield}
-                    value={formData.tag || ""}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Select type</option>
-                    <option value="e-commercs">e-commerce site</option>
-                    <option value="business">business site</option>
-                    <option value="blog">blog site</option>
-                    <option value="portfolio">portfolio site</option>
-                    <option value="personal">personal site</option>
-                    <option value="informational">informational site</option>
-                    <option value="event">event site</option>
-                    <option value="nonprofit">nonprofit site</option>
-                    <option value="membership">membership site</option>
-                    <option value="online">online forum</option>
-                    <option value="other">other type site</option>
-                  </select>
-                </div>
+              select the category
+            </label>
+            <select
+              id="product-category-select"
+              name="category"
+              className={styles.inputfield}
+              value={formData.category || ""}
+              onChange={handleInputChange}
+            >
+              <option value="">select type</option>
+              <option value="graphic">graphic design</option>
+              <option value="website">web design</option>
+            </select>
+            <div className={styles.tagdiv} id="graphic-tag-div">
+              <label id="graphic" className={styles.text}>
+                select the graphic tag
+              </label>
+              <select
+                id="graphic"
+                name="tag"
+                className={styles.inputfield}
+                value={formData.tag || ""}
+                onChange={handleInputChange}
+              >
+                <option value="">Select type</option>
+                <option value="logo">logo</option>
+                <option value="visualidentity">visual identity</option>
+                <option value="advertisement">advertisement</option>
+                <option value="publication">publication</option>
+                <option value="motion">motion</option>
+                <option value="environmental">environmental</option>
+                <option value="informational">informational</option>
+                <option value="branding">branding</option>
+                <option value="illustration">illustration</option>
+                <option value="layout">layout</option>
+                <option value="packaging">packaging</option>
+                <option value="typography">typography</option>
+              </select>
+              <select
+                id="graphic"
+                name="tag1"
+                className={styles.inputfield}
+                value={formData.tag1 || ""}
+                onChange={handleInputChange}
+              >
+                <option value="">Select type</option>
+                <option value="logo">logo</option>
+                <option value="visualidentity">visual identity</option>
+                <option value="advertisement">advertisement</option>
+                <option value="publication">publication</option>
+                <option value="motion">motion</option>
+                <option value="environmental">environmental</option>
+                <option value="informational">informational</option>
+                <option value="branding">branding</option>
+                <option value="illustration">illustration</option>
+                <option value="layout">layout</option>
+                <option value="packaging">packaging</option>
+                <option value="typography">typography</option>
+              </select>
+              <select
+                id="graphic"
+                name="tag2"
+                className={styles.inputfield}
+                value={formData.tag2 || ""}
+                onChange={handleInputChange}
+              >
+                <option value="">Select type</option>
+                <option value="logo">logo</option>
+                <option value="visualidentity">visual identity</option>
+                <option value="advertisement">advertisement</option>
+                <option value="publication">publication</option>
+                <option value="motion">motion</option>
+                <option value="environmental">environmental</option>
+                <option value="informational">informational</option>
+                <option value="branding">branding</option>
+                <option value="illustration">illustration</option>
+                <option value="layout">layout</option>
+                <option value="packaging">packaging</option>
+                <option value="typography">typography</option>
+              </select>
+            </div>
+            <div className={styles.tagdiv} id="website-tag-div">
+              <label id="website" className={styles.text}>
+                select the website tag
+              </label>
+              <select
+                id="website"
+                name="tag"
+                className={styles.inputfield}
+                value={formData.tag || ""}
+                onChange={handleInputChange}
+              >
+                <option value="">Select type</option>
+                <option value="e-commercs">e-commerce site</option>
+                <option value="business">business site</option>
+                <option value="blog">blog site</option>
+                <option value="portfolio">portfolio site</option>
+                <option value="personal">personal site</option>
+                <option value="informational">informational site</option>
+                <option value="event">event site</option>
+                <option value="nonprofit">nonprofit site</option>
+                <option value="membership">membership site</option>
+                <option value="online">online forum</option>
+                <option value="other">other type site</option>
+              </select>
+            </div>
 
             {/* data description div */}
             <textarea
@@ -305,14 +302,28 @@ const ProductUpload = () => {
               onChange={handleInputChange}
             />
 
-            {/* data input field */}
-            <JoditEditor
-              ref={editor}
-              value={content}
-              className={styles.richTextEditorDiv}
-              tabIndex={1} // tabIndex of textarea
-              onChange={contentFieldData}
+            <input
+              className={styles.inputfield}
+              name="author"
+              placeholder="enter project author name"
+              value={formData.author || ""}
+              onChange={handleInputChange}
             />
+
+            <label htmlFor="imageratio" className={styles.text}>
+              select the image size ratio
+            </label>
+            <select
+              name="imageratio"
+              className={styles.inputfield}
+              value={formData.imageratio || ""}
+              onChange={handleInputChange}
+            >
+              <option value="">select image ratio type</option>
+              <option value="425px">1 : 1</option>
+              <option value="500px">9 : 16</option>
+              <option value="350px">16 : 19</option>
+            </select>
 
             {/* button section */}
             <div className={styles.btnsection}>

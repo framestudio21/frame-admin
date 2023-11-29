@@ -14,10 +14,14 @@ import styles from "../styles/subpage.module.css";
 
 export default dynamic(() => Promise.resolve(Product), { ssr: false });
 const Product = () => {
+
   const router = useRouter();
   const logout = () => {
     router.push("/");
   };
+  const productUploadPage = () => {
+    router.push ("/home/product/upload")
+  }
 
   // const { isAdmin } = useContext(AuthContext);
   // if (isAdmin == "no" || !isAdmin)
@@ -76,11 +80,10 @@ const Product = () => {
     <>
       <Navbar />
       <main className="mainpagebody">
-        {/* <UploadFooterBar /> */}
 
         <div className={styles.uploadnavbar}>
           <div className={styles.text}>upload a new product</div>
-          <button className={styles.uploadnavbarbtn}>upload product</button>
+          <button onClick={productUploadPage} className={styles.uploadnavbarbtn}>upload product</button>
         </div>
 
         <div className={styles.subpagemainbody}>

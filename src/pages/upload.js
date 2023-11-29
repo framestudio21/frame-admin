@@ -46,6 +46,7 @@ const Upload = () => {
       }
     });
   });
+  
   // product tag input selection
   useEffect(() => {
     const selectElement = document.getElementById("product-category-select");

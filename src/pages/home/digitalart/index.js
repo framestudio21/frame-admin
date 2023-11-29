@@ -5,12 +5,12 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useContext } from "react";
 
-import { AuthContext } from "../../component/context";
-import Navbar from "../../component/navbar";
-import UploadFooterBar from "../../component/uploadnavbar";
-import TaptoTop from "../../component/taptotopbtn";
+import { AuthContext } from "../../../component/context";
+import Navbar from "../../../component/navbar";
+import UploadFooterBar from "../../../component/uploadnavbar";
+import TaptoTop from "../../../component/taptotopbtn";
 
-import styles from "./styles/subpage.module.css"
+import styles from "../styles/subpage.module.css"
 
 export default dynamic(() => Promise.resolve(DigitalArt), { ssr: false });
 const DigitalArt = () => {
@@ -18,6 +18,9 @@ const DigitalArt = () => {
   const logout = () => {
     router.push("/");
   };
+  const digitalartUploadPage = () => {
+    router.push ("/home/digitalart/upload")
+  }
 
   // const { isAdmin } = useContext(AuthContext);
   // if (isAdmin == "no" || !isAdmin)
@@ -73,7 +76,13 @@ console.log(product);
     <>
       <Navbar />
       <main className="mainpagebody">
-        <UploadFooterBar />
+        {/* <UploadFooterBar /> */}
+
+        <div className={styles.uploadnavbar}>
+          <div className={styles.text}>upload a new product</div>
+          <button onClick={digitalartUploadPage} className={styles.uploadnavbarbtn}>upload product</button>
+        </div>
+
         <div className={styles.subpagemainbody}>
 
           

@@ -23,6 +23,7 @@ import Photography from "./home/photography";
 
 // home sub upload page
 import ProductUpload from "./home/product/upload"
+import DigitalartUpload from "./home/digitalart/upload"
 
 import Errorpage from "./_error";
 
@@ -60,6 +61,7 @@ const App = () => {
           <Route path="/home/photography" element={<Photography />} />
 
           <Route path="/home/product/upload" element={<ProductUpload />} />
+          <Route path="/home/digitalart/upload" element={<DigitalartUpload />} />
 
         </Routes>
       </Router>
