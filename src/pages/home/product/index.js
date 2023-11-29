@@ -10,7 +10,7 @@ import Navbar from "../../../component/navbar";
 import UploadFooterBar from "../../../component/uploadnavbar";
 import TaptoTop from "../../../component/taptotopbtn";
 
-import styles from "../styles/subpage.module.css"
+import styles from "../styles/subpage.module.css";
 
 export default dynamic(() => Promise.resolve(Product), { ssr: false });
 const Product = () => {
@@ -41,29 +41,33 @@ const Product = () => {
     const url = process.env.NEXT_PUBLIC_API_URL + "/product";
     fetch(url)
       .then((res) => res.json())
-      .then((data) => {setProduct(data); setProductAll(data)})
+      .then((data) => {
+        setProduct(data);
+        setProductAll(data);
+      })
       .catch(() => router.push("/404"));
   }, [refresh]);
-console.log(product);
-  const productCategory = [...new Set(product.map((item) => item.category))]
+  console.log(product);
+  const productCategory = [...new Set(product.map((item) => item.category))];
 
   const filterItem = (curcat) => {
     const newItem = product.filter((newCategory) => {
       return newCategory.category === curcat;
     });
-    setProduct(newItem)
-  }
+    setProduct(newItem);
+  };
 
   const deleteProduct = async (id) => {
     const isOkay = confirm("Are you sure to delete it?");
     if (isOkay) {
-      fetch(process.env.NEXT_PUBLIC_API_URL+`/product/${id}`, { method: "delete" })
+      fetch(process.env.NEXT_PUBLIC_API_URL + `/product/${id}`, {
+        method: "delete",
+      })
         .then(() => alert("done"))
         .then(() => {
           if (refresh == true) {
-            setRefresh(false)
-          }
-          else setRefresh(true)
+            setRefresh(false);
+          } else setRefresh(true);
         })
         .catch((err) => alert(err));
     }
@@ -73,10 +77,14 @@ console.log(product);
     <>
       <Navbar />
       <main className="mainpagebody">
-        <UploadFooterBar />
-        <div className={styles.subpagemainbody}>
+        {/* <UploadFooterBar /> */}
 
-          
+        <div className={styles.uploadnavbar}>
+          <div className={styles.text}>upload a new product</div>
+          <button className={styles.uploadnavbarbtn}>upload product</button>
+        </div>
+
+        <div className={styles.subpagemainbody}>
           <div className={styles.filternav}>
             <Link href="/home/digitalart">
               <button className={styles.filterbtn}>digital art</button>
@@ -93,11 +101,22 @@ console.log(product);
             {productCategory.map((item, index) => {
               return (
                 <>
-                <button key={item._id} onClick={() => filterItem(item)} className={styles.filterbtn}>{item}</button>
+                  <button
+                    key={item._id}
+                    onClick={() => filterItem(item)}
+                    className={styles.filterbtn}
+                  >
+                    {item}
+                  </button>
                 </>
-              )
+              );
             })}
-                <button onClick={() => setProduct(productAll)} className={styles.filterbtn}>All</button>
+            <button
+              onClick={() => setProduct(productAll)}
+              className={styles.filterbtn}
+            >
+              All
+            </button>
           </div>
 
           <div className={styles.cardmainbody}>
@@ -127,7 +146,7 @@ console.log(product);
                       </div>
                       <div className={styles.datesection}>
                         created At : {createdatdate}
-                        <br/>
+                        <br />
                         updated At : {updatedatdate}
                       </div>
                       <div className={styles.barsection}></div>
@@ -138,7 +157,12 @@ console.log(product);
                         <Link href={`/home/product/${item._id}`}>
                           <button className={styles.btn}>update</button>
                         </Link>
-                          <button onClick={() => deleteProduct(item._id)} className={styles.btn}>delete</button>
+                        <button
+                          onClick={() => deleteProduct(item._id)}
+                          className={styles.btn}
+                        >
+                          delete
+                        </button>
                       </div>
                     </div>
                   </div>

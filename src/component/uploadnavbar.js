@@ -10,7 +10,7 @@ export default function UploadFooterBar() {
         <div className={styles.text}>upload and a new project</div>
         <Link className={styles.link} href="/upload">
             <span>upload</span>
-            <IoMdArrowDroprightCircle className={styles.icon}/>
+            {/* <IoMdArrowDroprightCircle className={styles.icon}/> */}
         </Link>
     </div>
     </>

@@ -21,6 +21,9 @@ import Digitalart from "./home/digitalart";
 import Aiart from "./home/aiart";
 import Photography from "./home/photography";
 
+// home sub upload page
+import ProductUpload from "./home/product/upload"
+
 import Errorpage from "./_error";
 
 export default dynamic(() => Promise.resolve(App), { ssr: false });
@@ -55,6 +58,9 @@ const App = () => {
           <Route path="/home/digitalart" element={<Digitalart />} />
           <Route path="/home/aiart" element={<Aiart />} />
           <Route path="/home/photography" element={<Photography />} />
+
+          <Route path="/home/product/upload" element={<ProductUpload />} />
+
         </Routes>
       </Router>
     </>
